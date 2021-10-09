@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F12CEC4261F0D8600A7B17A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEC3261F0D8600A7B17A /* main.cpp */; };
+		2F12CED8261F0E0A00A7B17A /* Draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CED4261F0E0A00A7B17A /* Draw.cpp */; };
+		2F12CEDC261F115500A7B17A /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F12CEDB261F115500A7B17A /* GLUT.framework */; };
+		2F12CEDE261F118D00A7B17A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F12CEDD261F118D00A7B17A /* OpenGL.framework */; };
+		2F12CEE1261F146800A7B17A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEDF261F146800A7B17A /* Game.cpp */; };
+		2F12CEE526203E9400A7B17A /* Controler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEE326203E9400A7B17A /* Controler.cpp */; };
+		2F12CEE826203FC400A7B17A /* Controler2048.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEE626203FC400A7B17A /* Controler2048.cpp */; };
+		2F12CEEB26204B5700A7B17A /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEE926204B5700A7B17A /* GameObject.cpp */; };
+		2F12CEEE2620EA9F00A7B17A /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */; };
+		2F12CEF12621CFBF00A7B17A /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEEF2621CFBF00A7B17A /* Field.cpp */; };
+		2F12CEF4262462B400A7B17A /* Cell2048.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEF2262462B400A7B17A /* Cell2048.cpp */; };
+		2F12CEF82626E05700A7B17A /* RGB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEF62626E05700A7B17A /* RGB.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F12CEBE261F0D8600A7B17A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F12CEC0261F0D8600A7B17A /* Laba 2s 2 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Laba 2s 2 2"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F12CEC3261F0D8600A7B17A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2F12CECF261F0E0A00A7B17A /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
+		2F12CED0261F0E0A00A7B17A /* Draw.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Draw.hpp; sourceTree = "<group>"; };
+		2F12CED4261F0E0A00A7B17A /* Draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Draw.cpp; sourceTree = "<group>"; };
+		2F12CEDB261F115500A7B17A /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		2F12CEDD261F118D00A7B17A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2F12CEDF261F146800A7B17A /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		2F12CEE0261F146800A7B17A /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		2F12CEE226202BF300A7B17A /* settings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = settings.txt; sourceTree = "<group>"; };
+		2F12CEE326203E9400A7B17A /* Controler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controler.cpp; sourceTree = "<group>"; };
+		2F12CEE426203E9400A7B17A /* Controler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controler.hpp; sourceTree = "<group>"; };
+		2F12CEE626203FC400A7B17A /* Controler2048.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controler2048.cpp; sourceTree = "<group>"; };
+		2F12CEE726203FC400A7B17A /* Controler2048.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controler2048.hpp; sourceTree = "<group>"; };
+		2F12CEE926204B5700A7B17A /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		2F12CEEA26204B5700A7B17A /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextBox.cpp; sourceTree = "<group>"; };
+		2F12CEED2620EA9F00A7B17A /* TextBox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextBox.hpp; sourceTree = "<group>"; };
+		2F12CEEF2621CFBF00A7B17A /* Field.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Field.cpp; sourceTree = "<group>"; };
+		2F12CEF02621CFBF00A7B17A /* Field.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Field.hpp; sourceTree = "<group>"; };
+		2F12CEF2262462B400A7B17A /* Cell2048.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cell2048.cpp; sourceTree = "<group>"; };
+		2F12CEF3262462B400A7B17A /* Cell2048.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Cell2048.hpp; sourceTree = "<group>"; };
+		2F12CEF526246E5B00A7B17A /* best.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = best.txt; sourceTree = "<group>"; };
+		2F12CEF62626E05700A7B17A /* RGB.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RGB.cpp; sourceTree = "<group>"; };
+		2F12CEF72626E05700A7B17A /* RGB.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RGB.hpp; sourceTree = "<group>"; };
+		2FA21370262A2B6200BCEBCC /* colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
+		2FA21371262A2F0300BCEBCC /* Glut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glut.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F12CEBD261F0D8600A7B17A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F12CEDC261F115500A7B17A /* GLUT.framework in Frameworks */,
+				2F12CEDE261F118D00A7B17A /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F12CEB7261F0D8600A7B17A = {
+			isa = PBXGroup;
+			children = (
+				2F12CEC2261F0D8600A7B17A /* Laba 2s 2 2 */,
+				2F12CEC1261F0D8600A7B17A /* Products */,
+				2F12CEDA261F115500A7B17A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2F12CEC1261F0D8600A7B17A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F12CEC0261F0D8600A7B17A /* Laba 2s 2 2 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F12CEC2261F0D8600A7B17A /* Laba 2s 2 2 */ = {
+			isa = PBXGroup;
+			children = (
+				2F12CECB261F0E0A00A7B17A /* Headers */,
+				2F12CED1261F0E0A00A7B17A /* Source */,
+				2F12CEC3261F0D8600A7B17A /* main.cpp */,
+				2F12CEE226202BF300A7B17A /* settings.txt */,
+				2F12CEF526246E5B00A7B17A /* best.txt */,
+				2FA21370262A2B6200BCEBCC /* colors.txt */,
+			);
+			path = "Laba 2s 2 2";
+			sourceTree = "<group>";
+		};
+		2F12CECB261F0E0A00A7B17A /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2F12CECF261F0E0A00A7B17A /* Colors.h */,
+				2F12CED0261F0E0A00A7B17A /* Draw.hpp */,
+				2F12CEE0261F146800A7B17A /* Game.hpp */,
+				2F12CEE726203FC400A7B17A /* Controler2048.hpp */,
+				2F12CEE426203E9400A7B17A /* Controler.hpp */,
+				2F12CEEA26204B5700A7B17A /* GameObject.hpp */,
+				2F12CEED2620EA9F00A7B17A /* TextBox.hpp */,
+				2F12CEF02621CFBF00A7B17A /* Field.hpp */,
+				2F12CEF3262462B400A7B17A /* Cell2048.hpp */,
+				2F12CEF72626E05700A7B17A /* RGB.hpp */,
+				2FA21371262A2F0300BCEBCC /* Glut.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		2F12CED1261F0E0A00A7B17A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2F12CEF62626E05700A7B17A /* RGB.cpp */,
+				2F12CEF2262462B400A7B17A /* Cell2048.cpp */,
+				2F12CEEF2621CFBF00A7B17A /* Field.cpp */,
+				2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */,
+				2F12CEE926204B5700A7B17A /* GameObject.cpp */,
+				2F12CEE326203E9400A7B17A /* Controler.cpp */,
+				2F12CEDF261F146800A7B17A /* Game.cpp */,
+				2F12CED4261F0E0A00A7B17A /* Draw.cpp */,
+				2F12CEE626203FC400A7B17A /* Controler2048.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2F12CEDA261F115500A7B17A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F12CEDD261F118D00A7B17A /* OpenGL.framework */,
+				2F12CEDB261F115500A7B17A /* GLUT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F12CEBF261F0D8600A7B17A /* Laba 2s 2 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F12CEC7261F0D8600A7B17A /* Build configuration list for PBXNativeTarget "Laba 2s 2 2" */;
+			buildPhases = (
+				2F12CEBC261F0D8600A7B17A /* Sources */,
+				2F12CEBD261F0D8600A7B17A /* Frameworks */,
+				2F12CEBE261F0D8600A7B17A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Laba 2s 2 2";
+			productName = "Laba 2s 2 2";
+			productReference = 2F12CEC0261F0D8600A7B17A /* Laba 2s 2 2 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F12CEB8261F0D8600A7B17A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Влад Шелопугин";
+				TargetAttributes = {
+					2F12CEBF261F0D8600A7B17A = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 2F12CEBB261F0D8600A7B17A /* Build configuration list for PBXProject "Laba 2s 2 2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F12CEB7261F0D8600A7B17A;
+			productRefGroup = 2F12CEC1261F0D8600A7B17A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F12CEBF261F0D8600A7B17A /* Laba 2s 2 2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F12CEBC261F0D8600A7B17A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F12CEEB26204B5700A7B17A /* GameObject.cpp in Sources */,
+				2F12CEE826203FC400A7B17A /* Controler2048.cpp in Sources */,
+				2F12CEE526203E9400A7B17A /* Controler.cpp in Sources */,
+				2F12CEC4261F0D8600A7B17A /* main.cpp in Sources */,
+				2F12CED8261F0E0A00A7B17A /* Draw.cpp in Sources */,
+				2F12CEEE2620EA9F00A7B17A /* TextBox.cpp in Sources */,
+				2F12CEF4262462B400A7B17A /* Cell2048.cpp in Sources */,
+				2F12CEF12621CFBF00A7B17A /* Field.cpp in Sources */,
+				2F12CEE1261F146800A7B17A /* Game.cpp in Sources */,
+				2F12CEF82626E05700A7B17A /* RGB.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2F12CEC5261F0D8600A7B17A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2F12CEC6261F0D8600A7B17A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2F12CEC8261F0D8600A7B17A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F12CEC9261F0D8600A7B17A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F12CEBB261F0D8600A7B17A /* Build configuration list for PBXProject "Laba 2s 2 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F12CEC5261F0D8600A7B17A /* Debug */,
+				2F12CEC6261F0D8600A7B17A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F12CEC7261F0D8600A7B17A /* Build configuration list for PBXNativeTarget "Laba 2s 2 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F12CEC8261F0D8600A7B17A /* Debug */,
+				2F12CEC9261F0D8600A7B17A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F12CEB8261F0D8600A7B17A /* Project object */;
+}

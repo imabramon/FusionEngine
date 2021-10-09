@@ -1,0 +1,6 @@
+4
+10
+100
+25
+best.txt
+colors.txt
