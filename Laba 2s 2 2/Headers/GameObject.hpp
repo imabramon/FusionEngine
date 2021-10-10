@@ -5,40 +5,50 @@
 
 using namespace std;
 
+/*!
+ @brief Класс игрового объекта.
+ */
+
 class GameObject{
 public:
+    /*!
+        @brief Конструктор
+        @param tx x-координата
+        @param ty y-координата
+        @param p указатель на родительский объект
+    */
     GameObject(int tx, int ty, GameObject * p);
-    /*
-     tx, ty - координаты
-     p - указатель на родительский объект
-     */
     
+    //! Деструктор
+    /*!
+        Деструктор.
+    */
     virtual ~GameObject();
     
-    virtual void init(); // инициализация объекта
-    void render() const; //отображение объекта
+    virtual void init();
+    void render() const;
     
-    int getX() const; //получение x координаты
-    int getY() const; //получение y координаты
+    int getX() const;
+    int getY() const;
     
-    virtual bool isVisible() const; //отображается ли объект?
+    virtual bool isVisible() const;
     
-    virtual string getGameObjectType() const; //возращает тип объекта
+    virtual string getGameObjectType() const;
     
-    GameObject & operator +=(GameObject * obj); //добавление объекта obj
+    GameObject & operator +=(GameObject * obj);
 protected:
-    virtual void _selfRender() const; //отобржание самого объекта
+    virtual void _selfRender() const;
     
-    void _delchilds(); //Удаление дочерних объектов
+    void _delchilds();
     
-    static int _objectCount; //Общее количество объектов
-    static int _log; //Отображение лога
+    static int _objectCount;
+    static int _log;
     
-    int _id; //Номер объекта
-    int _x, _y; //Координаты
-    bool _visible; //Видим ли объект
+    int _id;
+    int _x, _y;
+    bool _visible;
     
-    GameObject * _parent; //Указатель на родительский объект
+    GameObject * _parent;
     
     vector<GameObject *> _child; //Дочерние объекты
 };
