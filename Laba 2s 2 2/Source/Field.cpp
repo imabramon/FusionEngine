@@ -6,8 +6,8 @@
 #include <fstream>
 
 #include "../Headers/Cell2048.hpp"
-#include "../Headers/Draw.hpp"
-#include "../Headers/Colors.h"
+#include "../Fusion/Headers/Draw.hpp"
+#include "../Fusion/Headers/Colors.h"
 
 using namespace std;
 

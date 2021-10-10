@@ -1,12 +1,11 @@
 #define GL_SILENCE_DEPRECATION
+
 #include "../Headers/Controler2048.hpp"
-
-#include "../Headers/Glut.h"
-
-#include "../Headers/Draw.hpp"
-#include "../Headers/Colors.h"
+#include "../Fusion/Headers/Glut.h"
+#include "../Fusion/Headers/Draw.hpp"
+#include "../Fusion/Headers/Colors.h"
 #include "../Headers/Field.hpp"
-#include "../Headers/TextBox.hpp"
+#include "../Fusion/Headers/TextBox.hpp"
 
 #include <iostream>
 #include <fstream>

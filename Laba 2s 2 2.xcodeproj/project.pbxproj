@@ -61,6 +61,7 @@
 		2F12CEF72626E05700A7B17A /* RGB.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RGB.hpp; sourceTree = "<group>"; };
 		2FA21370262A2B6200BCEBCC /* colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
 		2FA21371262A2F0300BCEBCC /* Glut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glut.h; sourceTree = "<group>"; };
+		2FB4722E2713160700BB58B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +97,14 @@
 		2F12CEC2261F0D8600A7B17A /* Laba 2s 2 2 */ = {
 			isa = PBXGroup;
 			children = (
+				2FB4722B2713125700BB58B4 /* Fusion */,
 				2F12CECB261F0E0A00A7B17A /* Headers */,
 				2F12CED1261F0E0A00A7B17A /* Source */,
 				2F12CEC3261F0D8600A7B17A /* main.cpp */,
 				2F12CEE226202BF300A7B17A /* settings.txt */,
 				2F12CEF526246E5B00A7B17A /* best.txt */,
 				2FA21370262A2B6200BCEBCC /* colors.txt */,
+				2FB4722E2713160700BB58B4 /* README.md */,
 			);
 			path = "Laba 2s 2 2";
 			sourceTree = "<group>";
@@ -109,17 +112,9 @@
 		2F12CECB261F0E0A00A7B17A /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				2F12CECF261F0E0A00A7B17A /* Colors.h */,
-				2F12CED0261F0E0A00A7B17A /* Draw.hpp */,
-				2F12CEE0261F146800A7B17A /* Game.hpp */,
 				2F12CEE726203FC400A7B17A /* Controler2048.hpp */,
-				2F12CEE426203E9400A7B17A /* Controler.hpp */,
-				2F12CEEA26204B5700A7B17A /* GameObject.hpp */,
-				2F12CEED2620EA9F00A7B17A /* TextBox.hpp */,
 				2F12CEF02621CFBF00A7B17A /* Field.hpp */,
 				2F12CEF3262462B400A7B17A /* Cell2048.hpp */,
-				2F12CEF72626E05700A7B17A /* RGB.hpp */,
-				2FA21371262A2F0300BCEBCC /* Glut.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -127,14 +122,8 @@
 		2F12CED1261F0E0A00A7B17A /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2F12CEF62626E05700A7B17A /* RGB.cpp */,
 				2F12CEF2262462B400A7B17A /* Cell2048.cpp */,
 				2F12CEEF2621CFBF00A7B17A /* Field.cpp */,
-				2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */,
-				2F12CEE926204B5700A7B17A /* GameObject.cpp */,
-				2F12CEE326203E9400A7B17A /* Controler.cpp */,
-				2F12CEDF261F146800A7B17A /* Game.cpp */,
-				2F12CED4261F0E0A00A7B17A /* Draw.cpp */,
 				2F12CEE626203FC400A7B17A /* Controler2048.cpp */,
 			);
 			path = Source;
@@ -147,6 +136,43 @@
 				2F12CEDB261F115500A7B17A /* GLUT.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FB4722B2713125700BB58B4 /* Fusion */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4722D271312BC00BB58B4 /* Headers */,
+				2FB4722C2713128100BB58B4 /* Source */,
+			);
+			path = Fusion;
+			sourceTree = "<group>";
+		};
+		2FB4722C2713128100BB58B4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2F12CEF62626E05700A7B17A /* RGB.cpp */,
+				2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */,
+				2F12CEE926204B5700A7B17A /* GameObject.cpp */,
+				2F12CEE326203E9400A7B17A /* Controler.cpp */,
+				2F12CEDF261F146800A7B17A /* Game.cpp */,
+				2F12CED4261F0E0A00A7B17A /* Draw.cpp */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2FB4722D271312BC00BB58B4 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2F12CECF261F0E0A00A7B17A /* Colors.h */,
+				2F12CED0261F0E0A00A7B17A /* Draw.hpp */,
+				2F12CEE0261F146800A7B17A /* Game.hpp */,
+				2F12CEE426203E9400A7B17A /* Controler.hpp */,
+				2F12CEEA26204B5700A7B17A /* GameObject.hpp */,
+				2F12CEED2620EA9F00A7B17A /* TextBox.hpp */,
+				2F12CEF72626E05700A7B17A /* RGB.hpp */,
+				2FA21371262A2F0300BCEBCC /* Glut.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
