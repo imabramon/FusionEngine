@@ -6,8 +6,8 @@
 using namespace std;
 
 /*!
- @brief Класс игрового объекта.
- */
+  @brief Основной класс для всех объектов
+*/
 
 class GameObject{
 public:
@@ -19,16 +19,29 @@ public:
     */
     GameObject(int tx, int ty, GameObject * p);
     
-    //! Деструктор
     /*!
-        Деструктор.
+        @brief Деструктор
     */
     virtual ~GameObject();
     
+    /*!
+        @brief Инициализация объекта
+     */
     virtual void init();
+    
+    /*!
+        @brief Ренедер объекта
+    */
     void render() const;
     
+    /*!
+     @brief Получить X-координату
+     */
     int getX() const;
+    
+    /*!
+        @brief Получить Y-координату
+     */
     int getY() const;
     
     virtual bool isVisible() const;
