@@ -3,9 +3,10 @@
 
 #include "Glut.h"
 
-#include "Controler.hpp"
-#include "GameObject.hpp"
+#include "../Fusion/Headers/Controler.hpp"
+#include "../Fusion/Headers/GameObject.hpp"
 #include "Field.hpp"
+
 #include <string>
 
 using namespace std;

@@ -10,10 +10,10 @@
 #include <cstdlib>
 #include <ctime>
 
-#include "Headers/Draw.hpp"
-#include "Headers/Colors.h"
-#include "Headers/Game.hpp"
-#include "Headers/Controler.hpp"
+#include "Fusion/Headers/Draw.hpp"
+#include "Fusion/Headers/Colors.h"
+#include "Fusion/Headers/Game.hpp"
+#include "Fusion/Headers/Controler.hpp"
 #include "Headers/Controler2048.hpp"
 
 Game * Game::_game = NULL;
