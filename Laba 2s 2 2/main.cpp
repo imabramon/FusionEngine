@@ -16,9 +16,15 @@
 #include "Fusion/Headers/Controler.hpp"
 #include "Headers/Controler2048.hpp"
 
+/* TODO MACROS
+ Code below to macros
+ */
+
 Game * Game::_game = NULL;
 int GameObject::_objectCount = 0;
 int GameObject::_log = 0;
+
+// END MACROS
 
 using namespace std;
 
