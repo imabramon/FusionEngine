@@ -1,29 +1,29 @@
 #include "../Headers/RGB.hpp"
 
-RGB::RGB(int tr, int tg, int tb): _red(tr), _green(tg), _blue(tb) {};
+RGB::RGB(int t_red, int t_green, int t_blue): m_red(t_red), m_green(t_green), m_blue(t_blue) {};
 
-RGB::RGB(string hex){
-    _red = _hexToDec(hex[0])*16 + _hexToDec(hex[1]);
-    _green = _hexToDec(hex[2])*16 + _hexToDec(hex[3]);
-    _blue = _hexToDec(hex[4])*16 + _hexToDec(hex[5]);
+RGB::RGB(string t_hex){
+    m_red = _hexToDec(t_hex[0])*16 + _hexToDec(t_hex[1]);
+    m_green = _hexToDec(t_hex[2])*16 + _hexToDec(t_hex[3]);
+    m_blue = _hexToDec(t_hex[4])*16 + _hexToDec(t_hex[5]);
 };
 
 int RGB::getRed() const{
-    return _red;
+    return m_red;
 }
 
 int RGB::getGreen() const{
-    return _green;
+    return m_green;
 }
 
 int RGB::getBlue() const{
-    return _blue;
+    return m_blue;
 }
 
-int RGB::_hexToDec(char c) const{
-    if(c >= '0' && c <= '9') return c - '0';
+int RGB::_hexToDec(char t_hexDigit) const{
+    if(t_hexDigit >= '0' && t_hexDigit <= '9') return t_hexDigit - '0';
     
-    if(c >= 'A' && c <= 'F') return 10 + (c - 'A');
+    if(t_hexDigit >= 'A' && t_hexDigit <= 'F') return 10 + (t_hexDigit - 'A');
     
     return 0;
 }

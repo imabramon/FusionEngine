@@ -20,9 +20,9 @@
  Code below to macros
  */
 
-Game * Game::_game = NULL;
-int GameObject::_objectCount = 0;
-int GameObject::_log = 0;
+Game * Game::m_game = NULL;
+int GameObject::m_objectCount = 0;
+int GameObject::m_log = 0;
 
 // END MACROS
 

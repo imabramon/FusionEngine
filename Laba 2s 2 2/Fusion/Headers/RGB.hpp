@@ -7,14 +7,14 @@ using namespace std;
 
 class RGB{
 public:
-    RGB(int tr = 0, int tg = 0, int tb = 0);
+    RGB(int t_red = 0, int t_green = 0, int t_blue = 0);
     /*
      Цвет по кофенцентам
      tr - красный
      tg - зеленый
      tb - синий
      */
-    RGB(string hex);
+    RGB(string t_hex);
     /*
      Цвет по коду hex
      */
@@ -23,9 +23,9 @@ public:
     int getGreen() const; //Получение зеленого
     int getBlue() const; // Получение синего
 private:
-    int _red, _green, _blue; //коффиценты
+    int m_red, m_green, m_blue; //коффиценты
     
-    int _hexToDec(char c) const; //Приведение "с" в десятичную cc
+    int _hexToDec(char t_hexDigit) const; //Приведение "с" в десятичную cc
 };
 
 #endif /* RGB_hpp */

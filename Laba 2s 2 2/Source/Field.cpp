@@ -11,18 +11,20 @@
 
 using namespace std;
 
-Field::Field(int tx, int ty, GameObject * p, int sp, int sz, int c_z, int c_r, string colorsPath): GameObject(tx, ty, p){
-    _space = sp;
-    _size = sz;
-    _cellSize = c_z;
-    _cellRound = c_r;
-    _width = (_cellSize+_space)*_size + _space;
-    _height = (_cellSize+_space)*_size + _space;
-    _emptyCount = _size*_size;
-    for(int i = 0; i < _size; i++) _data.push_back(vector<int>(_size));
+Field::Field(int t_x, int t_y, GameObject * t_parent,
+             int t_space, int t_size, int t_cellSize,
+             int t_cellRadius, string t_colorsPath): GameObject(t_x, t_y, t_parent){
+    m_space = t_space;
+    m_size = t_size;
+    m_cellSize = t_cellSize;
+    m_cellRound = t_cellRadius;
+    m_width = (m_cellSize+m_space)*m_size + m_space;
+    m_height = (m_cellSize+m_space)*m_size + m_space;
+    m_emptyCount = m_size*m_size;
+    for(int i = 0; i < m_size; i++) m_data.push_back(vector<int>(m_size));
     
     
-    ifstream in(colorsPath);
+    ifstream in(t_colorsPath);
     
     int size;
     string tmp;
@@ -31,31 +33,18 @@ Field::Field(int tx, int ty, GameObject * p, int sp, int sz, int c_z, int c_r, s
     
     for(int i = 0; i < size; i++){
         in >> tmp;
-        _colors.push_back(tmp);
+        m_colors.push_back(tmp);
     }
-    
-    /*
-    _colors.push_back(RGB("53DF00"));
-    _colors.push_back(RGB("58A72A"));
-    _colors.push_back(RGB("369100"));
-    _colors.push_back(RGB("7EEF3C"));
-    _colors.push_back(RGB("9CEF6C"));
-    _colors.push_back(RGB("00A876"));
-    _colors.push_back(RGB("207E62"));
-    _colors.push_back(RGB("006D4C"));
-    _colors.push_back(RGB("35D4A4"));
-    _colors.push_back(RGB("5FD4B1"));
-     */
     
     in.close();
 }
 
 void Field::createCell(){
-    while(1 && _emptyCount){
-        int sx = rand() % _size, sy = rand() % _size;
-        if(_data[sy][sx] == 0){
-            _data[sy][sx]++;
-            _emptyCount--;
+    while(1 && m_emptyCount){
+        int sx = rand() % m_size, sy = rand() % m_size;
+        if(m_data[sy][sx] == 0){
+            m_data[sy][sx]++;
+            m_emptyCount--;
             break;
         }
     }
@@ -63,24 +52,35 @@ void Field::createCell(){
 }
 
 void Field::init(){
-    for(int i = 0; i < _size; i++){
-        for(int j =0; j < _size; j++){
-            _data[i][j] = 0;
-            *this += new Cell2048((_cellSize+_space)*j + _space, (_cellSize+_space)*i + _space, _cellSize, _cellSize, _cellRound, this, &_data[i][j], _colors);
+    for(int i = 0; i < m_size; i++){
+        for(int j =0; j < m_size; j++){
+            m_data[i][j] = 0;
+            *this += new Cell2048((m_cellSize+m_space)*j + m_space,
+                                  (m_cellSize+m_space)*i + m_space,
+                                  m_cellSize, m_cellSize,
+                                  m_cellRound,
+                                  this,
+                                  &m_data[i][j],
+                                  m_colors);
         }
     }
 }
 
 
 void Field::_selfRender() const{
-    draw::roundRect(getX(), getY(), _width, _height, _space, RGB(GREY));
+    draw::roundRect(getX(),
+                    getY(),
+                    m_width,
+                    m_height,
+                    m_space,
+                    RGB(GREY));
 }
 
 pair<int, int> Field::moveUp(){
     int count = 0;
     int flag = 0;
-    for(int i = 0; i < _size; i++){
-        pair<int, int> temp = _colMoveUp(i);
+    for(int i = 0; i < m_size; i++){
+        pair<int, int> temp = _columnMoveUp(i);
         flag += temp.first;
         count += temp.second;
     }
@@ -90,8 +90,8 @@ pair<int, int> Field::moveUp(){
 pair<int, int> Field::moveDown(){
     int count = 0;
     int flag = 0;
-    for(int i = 0; i < _size; i++){
-        pair<int, int> temp = _colMoveDown(i);
+    for(int i = 0; i < m_size; i++){
+        pair<int, int> temp = _columnMoveDown(i);
         flag += temp.first;
         count += temp.second;
     }
@@ -101,7 +101,7 @@ pair<int, int> Field::moveDown(){
 pair<int, int> Field::moveLeft(){
     int count = 0;
     int flag = 0;
-    for(int i = 0; i < _size; i++){
+    for(int i = 0; i < m_size; i++){
         pair<int, int> temp = _rowMoveLeft(i);
         flag += temp.first;
         count += temp.second;
@@ -112,7 +112,7 @@ pair<int, int> Field::moveLeft(){
 pair<int, int> Field::moveRight(){
     int count = 0;
     int flag = 0;
-    for(int i = 0; i < _size; i++){
+    for(int i = 0; i < m_size; i++){
         pair<int, int> temp = _rowMoveRight(i);
         flag = temp.first;
         count += temp.second;
@@ -120,180 +120,180 @@ pair<int, int> Field::moveRight(){
     return pair<int, int>(flag, count);
 }
 
-pair<int, int> Field::_colMoveUp(int n){
+pair<int, int> Field::_columnMoveUp(int t_column){
     int suc = 0;
     int count = 0;
-    for(int i = 0; i < _size; i++){
-        if(_data[i][n] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[i][t_column] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[j][n] != 0){
-                _data[i][n] = _data[j][n];
-                _data[j][n] = 0;
+            for(; j < m_size; j++) if(m_data[j][t_column] != 0){
+                m_data[i][t_column] = m_data[j][t_column];
+                m_data[j][t_column] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
-    for(int i = 0; i < _size-1; i++){
-        if(_data[i][n] == 0) continue;
-        if(_data[i][n] == _data[i+1][n]){
-            _data[i][n]++;
-            _data[i+1][n] = 0;
-            _emptyCount++;
+    for(int i = 0; i < m_size-1; i++){
+        if(m_data[i][t_column] == 0) continue;
+        if(m_data[i][t_column] == m_data[i+1][t_column]){
+            m_data[i][t_column]++;
+            m_data[i+1][t_column] = 0;
+            m_emptyCount++;
             suc = 1;
-            count += _power(2, _data[i][n]);
+            count += _power(2, m_data[i][t_column]);
         }
     }
     
-    for(int i = 0; i < _size; i++){
-        if(_data[i][n] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[i][t_column] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[j][n] != 0){
-                _data[i][n] = _data[j][n];
-                _data[j][n] = 0;
+            for(; j < m_size; j++) if(m_data[j][t_column] != 0){
+                m_data[i][t_column] = m_data[j][t_column];
+                m_data[j][t_column] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
     return pair<int, int>(suc, count);
 }
 
-pair<int, int> Field::_colMoveDown(int n){
+pair<int, int> Field::_columnMoveDown(int t_column){
     int suc = 0;
     int count = 0;
-    for(int i = 0; i < _size; i++){
-        if(_data[_size-1-i][n] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[m_size-1-i][t_column] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[_size-1-j][n] != 0){
-                _data[_size-1-i][n] = _data[_size-1-j][n];
-                _data[_size-1-j][n] = 0;
+            for(; j < m_size; j++) if(m_data[m_size-1-j][t_column] != 0){
+                m_data[m_size-1-i][t_column] = m_data[m_size-1-j][t_column];
+                m_data[m_size-1-j][t_column] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
-    for(int i = 0; i < _size-1; i++){
-        if(_data[_size-1-i][n] == 0) continue;
-        if(_data[_size-1-i][n] == _data[_size-1-i-1][n]){
-            _data[_size-1-i][n]++;
-            _data[_size-1-i-1][n] = 0;
-            _emptyCount++;
-            count += _power(2, _data[_size-1-i][n]);
+    for(int i = 0; i < m_size-1; i++){
+        if(m_data[m_size-1-i][t_column] == 0) continue;
+        if(m_data[m_size-1-i][t_column] == m_data[m_size-1-i-1][t_column]){
+            m_data[m_size-1-i][t_column]++;
+            m_data[m_size-1-i-1][t_column] = 0;
+            m_emptyCount++;
+            count += _power(2, m_data[m_size-1-i][t_column]);
             suc = 1;
         }
     }
     
-    for(int i = 0; i < _size; i++){
-        if(_data[_size-1-i][n] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[m_size-1-i][t_column] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[_size-1-j][n] != 0){
-                _data[_size-1-i][n] = _data[_size-1-j][n];
-                _data[_size-1-j][n] = 0;
+            for(; j < m_size; j++) if(m_data[m_size-1-j][t_column] != 0){
+                m_data[m_size-1-i][t_column] = m_data[m_size-1-j][t_column];
+                m_data[m_size-1-j][t_column] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
     return pair<int, int>(suc, count);
 }
 
-pair<int, int> Field::_rowMoveLeft(int n){
+pair<int, int> Field::_rowMoveLeft(int t_row){
     int suc = 0;
     int count = 0;
-    for(int i = 0; i < _size; i++){
-        if(_data[n][i] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[t_row][i] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[n][j] != 0){
-                _data[n][i] = _data[n][j];
-                _data[n][j] = 0;
+            for(; j < m_size; j++) if(m_data[t_row][j] != 0){
+                m_data[t_row][i] = m_data[t_row][j];
+                m_data[t_row][j] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
-    for(int i = 0; i < _size-1; i++){
-        if(_data[n][i] == 0) continue;
-        if(_data[n][i] == _data[n][i+1]){
-            _data[n][i]++;
-            _data[n][i+1] = 0;
-            _emptyCount++;
+    for(int i = 0; i < m_size-1; i++){
+        if(m_data[t_row][i] == 0) continue;
+        if(m_data[t_row][i] == m_data[t_row][i+1]){
+            m_data[t_row][i]++;
+            m_data[t_row][i+1] = 0;
+            m_emptyCount++;
             suc = 1;
-            count += _power(2, _data[n][i]);
+            count += _power(2, m_data[t_row][i]);
         }
     }
     
-    for(int i = 0; i < _size; i++){
-        if(_data[n][i] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[t_row][i] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[n][j] != 0){
-                _data[n][i] = _data[n][j];
-                _data[n][j] = 0;
+            for(; j < m_size; j++) if(m_data[t_row][j] != 0){
+                m_data[t_row][i] = m_data[t_row][j];
+                m_data[t_row][j] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
     return pair<int, int>(suc, count);
 }
 
-pair<int, int> Field::_rowMoveRight(int n){
+pair<int, int> Field::_rowMoveRight(int t_row){
     int suc = 0;
     int count = 0;
-    for(int i = 0; i < _size; i++){
-        if(_data[n][_size-1-i] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[t_row][m_size-1-i] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[n][_size-1-j] != 0){
-                _data[n][_size-1-i] = _data[n][_size-1-j];
-                _data[n][_size-1-j] = 0;
+            for(; j < m_size; j++) if(m_data[t_row][m_size-1-j] != 0){
+                m_data[t_row][m_size-1-i] = m_data[t_row][m_size-1-j];
+                m_data[t_row][m_size-1-j] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
-    for(int i = 0; i < _size-1; i++){
-        if(_data[n][_size-1-i] == 0) continue;
-        if(_data[n][_size-1-i] == _data[n][_size-1-i-1]){
-            _data[n][_size-1-i]++;
-            _data[n][_size-1-i-1] = 0;
-            _emptyCount++;
+    for(int i = 0; i < m_size-1; i++){
+        if(m_data[t_row][m_size-1-i] == 0) continue;
+        if(m_data[t_row][m_size-1-i] == m_data[t_row][m_size-1-i-1]){
+            m_data[t_row][m_size-1-i]++;
+            m_data[t_row][m_size-1-i-1] = 0;
+            m_emptyCount++;
             suc = 1;
-            count += _power(2, _data[n][_size-1-i]);
+            count += _power(2, m_data[t_row][m_size-1-i]);
         }
     }
     
-    for(int i = 0; i < _size; i++){
-        if(_data[n][_size-1-i] == 0){
+    for(int i = 0; i < m_size; i++){
+        if(m_data[t_row][m_size-1-i] == 0){
             int j = i;
-            for(; j < _size; j++) if(_data[n][_size-1-j] != 0){
-                _data[n][_size-1-i] = _data[n][_size-1-j];
-                _data[n][_size-1-j] = 0;
+            for(; j < m_size; j++) if(m_data[t_row][m_size-1-j] != 0){
+                m_data[t_row][m_size-1-i] = m_data[t_row][m_size-1-j];
+                m_data[t_row][m_size-1-j] = 0;
                 suc = 1;
                 break;
             }
             
-            if(j == _size) break;
+            if(j == m_size) break;
         }
     }
     
@@ -301,29 +301,29 @@ pair<int, int> Field::_rowMoveRight(int n){
 }
 
 int Field::getWidth() const{
-    return _width;
+    return m_width;
 }
 
 int Field::getHeight() const{
-    return _height;
+    return m_height;
 }
 
-int Field::_power(int n, int q){
+int Field::_power(int t_number, int t_power){
     int p = 1;
-    for(int i = 0; i < q; i++) p *= n;
+    for(int i = 0; i < t_power; i++) p *= t_number;
     return p;
 }
 
 int Field::check() const{
-    for(int i = 0; i < _size-1; i++)
-        for(int j = 0; j < _size-1; j++)
-            if(_data[i][j] == _data[i][j+1] || _data[i][j] == _data[i+1][j] || _data[i+1][j+1] == _data[i][j+1] || _data[i+1][j+1] == _data[i+1][j]) return 1;
+    for(int i = 0; i < m_size-1; i++)
+        for(int j = 0; j < m_size-1; j++)
+            if(m_data[i][j] == m_data[i][j+1] || m_data[i][j] == m_data[i+1][j] || m_data[i+1][j+1] == m_data[i][j+1] || m_data[i+1][j+1] == m_data[i+1][j]) return 1;
     
     return 0;
 }
 
 int Field::isFull() const{
-    return _emptyCount == 0;
+    return m_emptyCount == 0;
 }
 
 

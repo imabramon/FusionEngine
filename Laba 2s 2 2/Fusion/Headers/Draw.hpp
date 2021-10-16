@@ -8,7 +8,7 @@
 #include "RGB.hpp"
 
 namespace draw {
-    void circle(int x, int y, int r, RGB rgb);
+    void circle(int t_x, int t_y, int t_radius, RGB t_color);
     /*
      Рисует закрашенный круг
      x, y - координаты
@@ -16,7 +16,7 @@ namespace draw {
      cr, cg, cb - цвет
      */
 
-    void rect(int x, int y, int w, int h, RGB rgb);
+    void rect(int t_x, int t_y, int t_width, int t_height, RGB t_colors);
     /*
     Рисует закрашенный круг
     x, y - координаты
@@ -24,7 +24,7 @@ namespace draw {
     cr, cg, cb - цвет
     */
 
-    void roundRect(int x, int y, int w, int h, int r, RGB rgb);
+    void roundRect(int t_x, int t_y, int t_width, int t_height, int t_radius, RGB t_color);
     /*
     Рисует закрашенный круг
     x, y - координаты
@@ -33,7 +33,7 @@ namespace draw {
     cr, cg, cb - цвет
     */
 
-    void text(int x, int y, std::string str, RGB rgb);
+    void text(int t_x, int t_y, std::string t_string, RGB t_colors);
 
 
 }
