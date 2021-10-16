@@ -17,7 +17,7 @@
 class Cell2048: public TextBox{
 public:
     
-    Cell2048(int tx, int ty, int w, int h, int r, GameObject * p, int * s, vector<RGB> & c);
+    Cell2048(int t_x, int t_y, int t_width, int t_height, int t_radius, GameObject * t_parent, int * t_score, vector<RGB> & t_colors);
     
     
     /*! Калл
@@ -32,7 +32,7 @@ public:
 protected:
     RGB _getColor() const; //получение цвета
 private:
-    vector<RGB> & _colors;
+    vector<RGB> & m_colors;
 };
 
 #endif /* Cell2048_hpp */

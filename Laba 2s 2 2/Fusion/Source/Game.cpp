@@ -8,39 +8,39 @@
 #include "../Headers/Colors.h"
 #include "../Headers/Draw.hpp"
 
-Game::Game(Controler * c){
-    _controler = c;
-    _width = c->getWidth();
-    _height = c->getHeight();
+Game::Game(Controler * t_controller){
+    m_controler = t_controller;
+    m_width = t_controller->getWidth();
+    m_height = t_controller->getHeight();
 }
 
 void Game::display(){
-    Game::_game->_controler->display();
+    Game::m_game->m_controler->display();
 }
 
-void Game::reshape(GLint w, GLint h){
-    Game::_game->_controler->reshape(w, h);
+void Game::reshape(GLint t_width, GLint t_height){
+    Game::m_game->m_controler->reshape(t_width, t_height);
 }
 
-void Game::mouse(int button, int state, int x, int y){
-    Game::_game->_controler->mouse(button, state, x, y);
+void Game::mouse(int t_button, int t_state, int t_x, int t_y){
+    Game::m_game->m_controler->mouse(t_button, t_state, t_x, t_y);
 }
 
-void Game::timer(int t){
-    Game::_game->_controler->timer(t);
+void Game::timer(int t_time){
+    Game::m_game->m_controler->timer(t_time);
 }
 
-void Game::keyboard(unsigned char key, int x, int y){
-    Game::_game->_controler->keyboard(key, x, y);
+void Game::keyboard(unsigned char t_key, int t_x, int t_y){
+    Game::m_game->m_controler->keyboard(t_key, t_x, t_y);
 }
 
-void Game::init(Game * g){
-    Game::_game = g;
+void Game::init(Game * t_game){
+    Game::m_game = t_game;
 }
 
 void Game::play(){
     //glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutInitWindowSize(_width, _height);
+    glutInitWindowSize(m_width, m_height);
     glutCreateWindow("2048 Game");
     glutDisplayFunc(Game::display);
     glutReshapeFunc(Game::reshape);
@@ -48,18 +48,3 @@ void Game::play(){
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glutMainLoop();
 }
-
-/*
-   glClear(GL_COLOR_BUFFER_BIT);
-   Draw::RoundRect(200, 200, 100, 100, 10, GREEN);
-   Draw::Circle(250, 250, 50, RED);
-   Draw::Rect(275, 250, 50, 50, BLUE);
-   
-   glFlush();*/
-
-
-/*
-glViewport(0, 0, w, h);
-glMatrixMode(GL_PROJECTION);
-glLoadIdentity();
-glOrtho(0, w, 0, h, -1.0, 1.0);*/

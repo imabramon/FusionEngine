@@ -62,6 +62,7 @@
 		2FA21370262A2B6200BCEBCC /* colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
 		2FA21371262A2F0300BCEBCC /* Glut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glut.h; sourceTree = "<group>"; };
 		2FB4722E2713160700BB58B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2FB4722F27146C5C00BB58B4 /* SyntaxTarget.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SyntaxTarget.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +106,7 @@
 				2F12CEF526246E5B00A7B17A /* best.txt */,
 				2FA21370262A2B6200BCEBCC /* colors.txt */,
 				2FB4722E2713160700BB58B4 /* README.md */,
+				2FB4722F27146C5C00BB58B4 /* SyntaxTarget.md */,
 			);
 			path = "Laba 2s 2 2";
 			sourceTree = "<group>";

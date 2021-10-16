@@ -11,17 +11,8 @@ using namespace std;
 
 class GameObject{
 public:
-    /*!
-        @brief Конструктор
-        @param tx x-координата
-        @param ty y-координата
-        @param p указатель на родительский объект
-    */
-    GameObject(int tx, int ty, GameObject * p);
+    GameObject(int t_x, int t_y, GameObject * t_parent);
     
-    /*!
-        @brief Деструктор
-    */
     virtual ~GameObject();
     
     /*!
@@ -48,22 +39,22 @@ public:
     
     virtual string getGameObjectType() const;
     
-    GameObject & operator +=(GameObject * obj);
+    GameObject & operator +=(GameObject * t_object);
 protected:
     virtual void _selfRender() const;
     
     void _delchilds();
     
-    static int _objectCount;
-    static int _log;
+    static int m_objectCount;
+    static int m_log;
     
-    int _id;
-    int _x, _y;
-    bool _visible;
+    int m_id;
+    int m_x, m_y;
+    bool m_visible;
     
-    GameObject * _parent;
+    GameObject * m_parent;
     
-    vector<GameObject *> _child; //Дочерние объекты
+    vector<GameObject *> m_child; //Дочерние объекты
 };
 
 #endif /* GameObject_hpp */

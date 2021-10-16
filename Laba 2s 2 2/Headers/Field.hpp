@@ -10,7 +10,7 @@
 
 class Field: public GameObject{
 public:
-    Field(int tx, int ty, GameObject * p, int sp, int sz, int c_z, int c_r, string colorsPath);
+    Field(int t_x, int t_y, GameObject * t_parent, int t_space, int t_size, int t_cellSize, int t_cellRound, string t_colorsPath);
     /*
      tx, ty - координаты
      p - указатель на родительский объект
@@ -37,22 +37,22 @@ public:
 protected:
     void _selfRender() const; //отобржание самого объекта
 private:
-    int _emptyCount; //количество свобожных клеток
-    int _width, _height; //размеры
-    int _size; //размер поля
-    int _space; //растояние между клетками
-    int _cellSize; //размер клетки
-    int _cellRound; //скругление клетки
+    int m_emptyCount; //количество свобожных клеток
+    int m_width, m_height; //размеры
+    int m_size; //размер поля
+    int m_space; //растояние между клетками
+    int m_cellSize; //размер клетки
+    int m_cellRound; //скругление клетки
     
-    int _power(int n, int q); //возведение в степень
+    int _power(int t_number, int t_power); //возведение в степень
     
-    pair<int, int> _colMoveUp(int i); //движение клеток в столбце "i" вверх, возвращет успешность движения и количество очков
-    pair<int, int> _colMoveDown(int i); //движение клеток в столбце "i" вниз, возвращет успешность движения и количество очков
-    pair<int, int> _rowMoveLeft(int i); //движение клеток в строке "i" влево, возвращет успешность движения и количество очков
-    pair<int, int> _rowMoveRight(int i); //движение клеток в строке "i" вправо, возвращет успешность движения и количество очков
+    pair<int, int> _columnMoveUp(int t_column); //движение клеток в столбце "i" вверх, возвращет успешность движения и количество очков
+    pair<int, int> _columnMoveDown(int t_column); //движение клеток в столбце "i" вниз, возвращет успешность движения и количество очков
+    pair<int, int> _rowMoveLeft(int t_row); //движение клеток в строке "i" влево, возвращет успешность движения и количество очков
+    pair<int, int> _rowMoveRight(int t_row); //движение клеток в строке "i" вправо, возвращет успешность движения и количество очков
     
-    vector<vector<int>> _data; //данные о клетках
-    vector<RGB> _colors; //цвета
+    vector<vector<int>> m_data; //данные о клетках
+    vector<RGB> m_colors; //цвета
 };
 
 #endif /* Field_hpp */

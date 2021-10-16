@@ -4,7 +4,7 @@
 #include <cmath>
 
 
-void draw::circle(int x, int y, int r, RGB rgb)
+void draw::circle(int t_x, int t_y, int t_radius, RGB t_color)
 /*
 Рисует закрашенный круг
 x, y - координаты
@@ -16,22 +16,22 @@ cr, cg, cb - цвет
     int  num_segments = 100;
     glClearColor(1.0,1.0,1.0,0.0);
     glBegin(GL_TRIANGLE_FAN);
-    glColor3ub(rgb.getRed(), rgb.getGreen(), rgb.getBlue());
-    glVertex2f(x, y);
+    glColor3ub(t_color.getRed(), t_color.getGreen(), t_color.getBlue());
+    glVertex2f(t_x, t_y);
     for(int ii = 0; ii < num_segments+1; ii++)
     {
         double theta = 2.0f * 3.1415926f * ii / num_segments;//get the current angle
 
-        int tx = r * cos(theta);//calculate the x component
-        int ty = r * sin(theta);//calculate the y component
+        int tx = t_radius * cos(theta);//calculate the x component
+        int ty = t_radius * sin(theta);//calculate the y component
 
-        glVertex2f(x + tx, y + ty);//output vertex
+        glVertex2f(t_x + tx, t_y + ty);//output vertex
 
     }
     glEnd();
 }
 
-void draw::rect(int x, int y, int w, int h, RGB rgb)
+void draw::rect(int t_x, int t_y, int t_width, int t_height, RGB t_color)
 /*
 Рисует закрашенный круг
 x, y - координаты
@@ -40,16 +40,16 @@ cr, cg, cb - цвет
 */
 {
     glClearColor(1.0,1.0,1.0,0.0);
-    glColor3ub(rgb.getRed(), rgb.getGreen(), rgb.getBlue());
+    glColor3ub(t_color.getRed(), t_color.getGreen(), t_color.getBlue());
     glBegin(GL_TRIANGLE_FAN);
-        glVertex2f(x, y);
-        glVertex2f(x, y+h);
-        glVertex2f(x+w, y+h);
-        glVertex2f(x+w, y);
+        glVertex2f(t_x, t_y);
+        glVertex2f(t_x, t_y+t_height);
+        glVertex2f(t_x+t_width, t_y+t_height);
+        glVertex2f(t_x+t_width, t_y);
     glEnd();
 }
 
-void draw::roundRect(int x, int y, int w, int h, int r, RGB rgb)
+void draw::roundRect(int t_x, int t_y, int t_width, int t_height, int t_radius, RGB t_color)
 /*
 Рисует закрашенный круг
 x, y - координаты
@@ -58,26 +58,46 @@ r - радиус скругления
 cr, cg, cb - цвет
 */
 {
-    draw::circle(x+r, y+r, r, rgb);
-    draw::circle(x+w-r, y+r, r, rgb);
-    draw::circle(x+w-r, y+h-r, r, rgb);
-    draw::circle(x+r, y+h-r, r, rgb);
-    draw::rect(x+r, y, w-2*r, h, rgb);
-    draw::rect(x, y+r, w, h-2*r, rgb);
+    draw::circle(t_x+t_radius,
+                 t_y+t_radius,
+                 t_radius,
+                 t_color);
+    draw::circle(t_x+t_width-t_radius,
+                 t_y+t_radius,
+                 t_radius,
+                 t_color);
+    draw::circle(t_x+t_width-t_radius,
+                 t_y+t_height-t_radius,
+                 t_radius,
+                 t_color);
+    draw::circle(t_x+t_radius,
+                 t_y+t_height-t_radius,
+                 t_radius,
+                 t_color);
+    draw::rect(t_x+t_radius,
+               t_y,
+               t_width-2*t_radius,
+               t_height,
+               t_color);
+    draw::rect(t_x,
+               t_y+t_radius,
+               t_width,
+               t_height-2*t_radius,
+               t_color);
     
 }
 
-void draw::text(int x, int y, std::string str, RGB rgb){
-    glColor3ub(rgb.getRed(), rgb.getGreen(), rgb.getBlue());
+void draw::text(int t_x, int t_y, std::string t_string, RGB t_color){
+    glColor3ub(t_color.getRed(), t_color.getGreen(), t_color.getBlue());
     //int len = (int)str.length();
     int dx = 10, dy = 5;
-    int size = (int)str.length();
+    int size = (int)t_string.length();
     for(int i = 0; i < size; i++)
-        dx += glutBitmapWidth(GLUT_BITMAP_TIMES_ROMAN_24, str[i]);
-    glRasterPos2f(x - dx/2 + 5 , y+dy);
+        dx += glutBitmapWidth(GLUT_BITMAP_TIMES_ROMAN_24, t_string[i]);
+    glRasterPos2f(t_x - dx/2 + 5 , t_y+dy);
 
     
     for (int i = 0; i < size; i++) {
-      glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, str[i]);;  // Updates the position
+      glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, t_string[i]);;  // Updates the position
     }
 }

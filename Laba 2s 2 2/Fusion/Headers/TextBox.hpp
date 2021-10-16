@@ -6,7 +6,7 @@
 
 class TextBox: public GameObject{
 public:
-    TextBox(int tx, int ty, int w, int h, int r, GameObject * p, int * s);
+    TextBox(int t_x, int t_y, int t_width, int t_height, int t_radius, GameObject * t_parent, int * t_score);
     /*
      tx, ty - координаты
      p - указатель на родительский объект
@@ -22,9 +22,9 @@ public:
     virtual string getGameObjectType() const; //получение типа объекта
 protected:
     void _selfRender() const; //отобржание самого объекта
-    int * _score = NULL; //указатель на данные
-    int _width, _height; //размеры
-    int _r; //радиус скругления
+    int * m_score = NULL; //указатель на данные
+    int m_width, m_height; //размеры
+    int m_radius; //радиус скругления
     
     virtual RGB _getColor() const; //получение цвета
 };

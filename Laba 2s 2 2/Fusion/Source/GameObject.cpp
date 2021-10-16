@@ -6,19 +6,19 @@
 using namespace std;
 
 
-GameObject::GameObject(int tx, int ty, GameObject * p){
-    _x = tx;
-    _y = ty;
-    _parent = p;
-    _child = vector<GameObject *>(0);
-    _id = GameObject::_objectCount++;
-    _visible = 1;
+GameObject::GameObject(int t_x, int t_y, GameObject * t_parent){
+    m_x = t_x;
+    m_y = t_y;
+    m_parent = t_parent;
+    m_child = vector<GameObject *>(0);
+    m_id = GameObject::m_objectCount++;
+    m_visible = 1;
     
-    if(GameObject::_log) cout << getGameObjectType() << "[" << _id << "] created" << endl;
+    if(GameObject::m_log) cout << getGameObjectType() << "[" << m_id << "] created" << endl;
 }
 
 GameObject::~GameObject(){
-    if(GameObject::_log) cout << getGameObjectType() << "[" << _id << "] deleted" << endl;
+    if(GameObject::m_log) cout << getGameObjectType() << "[" << m_id << "] deleted" << endl;
     _delchilds();
 }
 
@@ -27,40 +27,40 @@ void GameObject::init(){};
 void GameObject::render() const{
     if(isVisible()) _selfRender();
     
-    int size = (int) _child.size();
+    int size = (int) m_child.size();
     
-    for(int i = 0; i < size; i++) _child[i] -> render();
+    for(int i = 0; i < size; i++) m_child[i] -> render();
 }
 
 void GameObject::_delchilds(){
-    int size = (int) _child.size();
+    int size = (int) m_child.size();
     
     for(int i = 0; i < size; i++)
-        if(_child[i]) {
-            delete _child[i];
+        if(m_child[i]) {
+            delete m_child[i];
         }
 }
 
 void GameObject::_selfRender() const{};
     
 int GameObject::getX() const{
-    if(_parent == NULL){
-        return _x;
+    if(m_parent == NULL){
+        return m_x;
     }
     
-    return _parent->getX() + _x;
+    return m_parent->getX() + m_x;
 }
 
 int GameObject::getY() const{
-    if(_parent == NULL){
-        return _y;
+    if(m_parent == NULL){
+        return m_y;
     }
     
-    return _parent->getY() + _y;
+    return m_parent->getY() + m_y;
 }
 
 bool GameObject::isVisible() const{
-    return _visible;
+    return m_visible;
 }
 
 string GameObject::getGameObjectType() const{
@@ -68,8 +68,8 @@ string GameObject::getGameObjectType() const{
 }
 
 
-GameObject & GameObject::operator +=(GameObject * obj){
-    _child.push_back(obj);
+GameObject & GameObject::operator +=(GameObject * t_object){
+    m_child.push_back(t_object);
     return *this;
 }
 
