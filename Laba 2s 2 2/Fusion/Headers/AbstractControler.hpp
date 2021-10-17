@@ -3,7 +3,7 @@
 
 #include "Glut.h"
 
-class Controler{
+class AbstractControler{
 public:
     virtual void display() = 0; // интерфейс функции отобржанеия
     virtual void reshape(GLint w, GLint h)  = 0; // интерфейс функции изменения размера

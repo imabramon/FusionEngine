@@ -3,7 +3,7 @@
 
 #include "Glut.h"
 
-#include "../Fusion/Headers/Controler.hpp"
+#include "../Fusion/Headers/AbstractControler.hpp"
 #include "../Fusion/Headers/GameObject.hpp"
 #include "Field.hpp"
 
@@ -12,7 +12,7 @@
 using namespace std;
 
 
-class Controler2048: public Controler{
+class Controler2048: public AbstractControler{
 public:
     Controler2048(string path); // path - путь к файлу с настройками игры
     ~Controler2048(){ delete _scene;}

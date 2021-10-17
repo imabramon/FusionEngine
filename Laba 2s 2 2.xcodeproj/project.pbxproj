@@ -12,7 +12,6 @@
 		2F12CEDC261F115500A7B17A /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F12CEDB261F115500A7B17A /* GLUT.framework */; };
 		2F12CEDE261F118D00A7B17A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F12CEDD261F118D00A7B17A /* OpenGL.framework */; };
 		2F12CEE1261F146800A7B17A /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEDF261F146800A7B17A /* Game.cpp */; };
-		2F12CEE526203E9400A7B17A /* Controler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEE326203E9400A7B17A /* Controler.cpp */; };
 		2F12CEE826203FC400A7B17A /* Controler2048.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEE626203FC400A7B17A /* Controler2048.cpp */; };
 		2F12CEEB26204B5700A7B17A /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEE926204B5700A7B17A /* GameObject.cpp */; };
 		2F12CEEE2620EA9F00A7B17A /* TextBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */; };
@@ -44,8 +43,7 @@
 		2F12CEDF261F146800A7B17A /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		2F12CEE0261F146800A7B17A /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		2F12CEE226202BF300A7B17A /* settings.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = settings.txt; sourceTree = "<group>"; };
-		2F12CEE326203E9400A7B17A /* Controler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controler.cpp; sourceTree = "<group>"; };
-		2F12CEE426203E9400A7B17A /* Controler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controler.hpp; sourceTree = "<group>"; };
+		2F12CEE426203E9400A7B17A /* AbstractControler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AbstractControler.hpp; sourceTree = "<group>"; };
 		2F12CEE626203FC400A7B17A /* Controler2048.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controler2048.cpp; sourceTree = "<group>"; };
 		2F12CEE726203FC400A7B17A /* Controler2048.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controler2048.hpp; sourceTree = "<group>"; };
 		2F12CEE926204B5700A7B17A /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				2F12CEF62626E05700A7B17A /* RGB.cpp */,
 				2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */,
 				2F12CEE926204B5700A7B17A /* GameObject.cpp */,
-				2F12CEE326203E9400A7B17A /* Controler.cpp */,
 				2F12CEDF261F146800A7B17A /* Game.cpp */,
 				2F12CED4261F0E0A00A7B17A /* Draw.cpp */,
 			);
@@ -168,7 +165,7 @@
 				2F12CECF261F0E0A00A7B17A /* Colors.h */,
 				2F12CED0261F0E0A00A7B17A /* Draw.hpp */,
 				2F12CEE0261F146800A7B17A /* Game.hpp */,
-				2F12CEE426203E9400A7B17A /* Controler.hpp */,
+				2F12CEE426203E9400A7B17A /* AbstractControler.hpp */,
 				2F12CEEA26204B5700A7B17A /* GameObject.hpp */,
 				2F12CEED2620EA9F00A7B17A /* TextBox.hpp */,
 				2F12CEF72626E05700A7B17A /* RGB.hpp */,
@@ -236,7 +233,6 @@
 			files = (
 				2F12CEEB26204B5700A7B17A /* GameObject.cpp in Sources */,
 				2F12CEE826203FC400A7B17A /* Controler2048.cpp in Sources */,
-				2F12CEE526203E9400A7B17A /* Controler.cpp in Sources */,
 				2F12CEC4261F0D8600A7B17A /* main.cpp in Sources */,
 				2F12CED8261F0E0A00A7B17A /* Draw.cpp in Sources */,
 				2F12CEEE2620EA9F00A7B17A /* TextBox.cpp in Sources */,
