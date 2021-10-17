@@ -17,14 +17,14 @@ public:
     Controler2048(string t_path); // path - путь к файлу с настройками игры
     ~Controler2048(){ delete m_scene;}
     
-    void display(); // функция отобржанеия
-    void reshape(GLint t_width, GLint t_height); // функция изменения размера
-    void mouse(int t_button, int t_state, int t_x, int t_y); // функция обработки мыши
-    void timer(int t_time); // функция таймера
-    void keyboard(unsigned char t_key, int t_x, int t_y); // функция обработки клавиатуры
+    void display() override; // функция отобржанеия
+    void reshape(GLint t_width, GLint t_height) override; // функция изменения размера
+    void mouse(int t_button, int t_state, int t_x, int t_y) override; // функция обработки мыши
+    void timer(int t_time) override; // функция таймера
+    void keyboard(unsigned char t_key, int t_x, int t_y) override; // функция обработки клавиатуры
     
-    int getWidth() const; //получение ширины окна
-    int getHeight() const; //получение высоты окна
+    int getWidth() const override; //получение ширины окна
+    int getHeight() const override; //получение высоты окна
 private:
     GameObject * m_scene; //Объект сцены
     

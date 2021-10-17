@@ -25,12 +25,12 @@ public:
     \return Сумму двух чисел, переданных в качестве аргументов
     */
 
-    bool isVisible() const; //отображаетмся ли объект?
+    bool isVisible() const override; //отображаетмся ли объект?
     
     
-    int getScore() const; //получение отображаемых данных
+    int getScore() const override; //получение отображаемых данных
 protected:
-    RGB _getColor() const; //получение цвета
+    RGB _getColor() const override; //получение цвета
 private:
     vector<RGB> & m_colors;
 };

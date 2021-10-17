@@ -17,11 +17,11 @@ public:
     
     virtual int getScore() const; //получение данных для отображения
     
-    virtual bool isVisible() const; //отображается ли объект?
+    virtual bool isVisible() const override; //отображается ли объект?
     
-    virtual string getGameObjectType() const; //получение типа объекта
+    virtual string getGameObjectType() const override; //получение типа объекта
 protected:
-    void _selfRender() const; //отобржание самого объекта
+    void _selfRender() const override; //отобржание самого объекта
     int * m_score = NULL; //указатель на данные
     int m_width, m_height; //размеры
     int m_radius; //радиус скругления
