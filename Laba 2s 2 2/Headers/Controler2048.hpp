@@ -14,33 +14,33 @@ using namespace std;
 
 class Controler2048: public AbstractControler{
 public:
-    Controler2048(string path); // path - путь к файлу с настройками игры
-    ~Controler2048(){ delete _scene;}
+    Controler2048(string t_path); // path - путь к файлу с настройками игры
+    ~Controler2048(){ delete m_scene;}
     
     void display(); // функция отобржанеия
-    void reshape(GLint w, GLint h); // функция изменения размера
-    void mouse(int button, int state, int x, int y); // функция обработки мыши
-    void timer(int t); // функция таймера
-    void keyboard(unsigned char key, int x, int y); // функция обработки клавиатуры
+    void reshape(GLint t_width, GLint t_height); // функция изменения размера
+    void mouse(int t_button, int t_state, int t_x, int t_y); // функция обработки мыши
+    void timer(int t_time); // функция таймера
+    void keyboard(unsigned char t_key, int t_x, int t_y); // функция обработки клавиатуры
     
     int getWidth() const; //получение ширины окна
     int getHeight() const; //получение высоты окна
 private:
-    GameObject * _scene; //Объект сцены
+    GameObject * m_scene; //Объект сцены
     
-    Field * _field; //Объект поля
+    Field * m_field; //Объект поля
     
-    unsigned char _lastKey = ' '; //Последняя нажатая клавиша
+    unsigned char m_lastKey = ' '; //Последняя нажатая клавиша
     
-    int _score = 0; //текущий счет
-    int _best = 0; //лучший счет
-    int _size; //количество ячеек
-    int _space; //растояние между объектами
-    int _cellSize, _cellRound; //параметры ячейки
+    int m_score = 0; //текущий счет
+    int m_best = 0; //лучший счет
+    int m_size; //количество ячеек
+    int m_space; //растояние между объектами
+    int m_cellSize, m_cellRound; //параметры ячейки
     
-    bool _gameOver = false; //Проиграна ли игра?
+    bool m_gameOver = false; //Проиграна ли игра?
     
-    string _bestPath; //путь к файлу с лучшим счетом
+    string m_bestPath; //путь к файлу с лучшим счетом
 };
 
 #endif /* Controler2048_hpp */

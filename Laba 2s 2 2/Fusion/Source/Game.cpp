@@ -8,7 +8,7 @@
 #include "../Headers/Colors.h"
 #include "../Headers/Draw.hpp"
 
-Game::Game(Controler * t_controller){
+Game::Game(AbstractControler * t_controller){
     m_controler = t_controller;
     m_width = t_controller->getWidth();
     m_height = t_controller->getHeight();
