@@ -4,14 +4,14 @@
 #include <string>
 #include "Glut.h"
 
-#include "Controler.hpp"
+#include "AbstractControler.hpp"
 
 using namespace std;
 
 
 class Game{
 public:
-    Game(Controler * t_controller);
+    Game(AbstractControler * t_controller);
     
     static void display(); //Функция отображения
     static void reshape(GLint t_width, GLint t_height); //Функция перерисовки
@@ -24,7 +24,7 @@ public:
 private:
     static Game * m_game; //Указатель на игру, чтобы можно было получить данные
     
-    Controler * m_controler; //Контролер игры
+    AbstractControler * m_controler; //Контролер игры
     string m_windowName; //Имя игры
     GLint m_width, m_height; //Размеры окна
 };

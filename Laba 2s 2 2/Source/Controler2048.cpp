@@ -12,36 +12,36 @@
 
 using namespace std;
 
-Controler2048::Controler2048(string path){
-    ifstream in(path);
+Controler2048::Controler2048(string t_path){
+    ifstream in(t_path);
     string colorsPath;
-    in >> _size >> _space >> _cellSize >> _cellRound >> _bestPath >> colorsPath;
+    in >> m_size >> m_space >> m_cellSize >> m_cellRound >> m_bestPath >> colorsPath;
     in.close();
     
-    ifstream b(_bestPath);
-    b >> _best;
+    ifstream b(m_bestPath);
+    b >> m_best;
     b.close();
     
-    _scene = new GameObject(0, 0, NULL);
+    m_scene = new GameObject(0, 0, NULL);
     
-    _field = new Field(_space, _cellSize + 2*_space, _scene, _space, _size, _cellSize, _cellRound, colorsPath);
-    _field->init();
+    m_field = new Field(m_space, m_cellSize + 2*m_space, m_scene, m_space, m_size, m_cellSize, m_cellRound, colorsPath);
+    m_field->init();
     
-    *_scene += new TextBox(_space, _space, (_field->getWidth()-_space) / 2, _cellSize, _cellRound, _scene, &_score);
-    *_scene += new TextBox((_field->getWidth()-_space)/ 2 + _space*2 , _space, (_field->getWidth()-_space) / 2, _cellSize, _cellRound, _scene, &_best);
+    *m_scene += new TextBox(m_space, m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_score);
+    *m_scene += new TextBox((m_field->getWidth()-m_space)/ 2 + m_space*2 , m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_best);
     
-    *_scene += _field;
+    *m_scene += m_field;
     
-    _field->createCell();
-    _field->createCell();
+    m_field->createCell();
+    m_field->createCell();
 }
 
 void Controler2048::display() {
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    _scene->render();
-    if(_gameOver){
+    m_scene->render();
+    if(m_gameOver){
         draw::roundRect(getWidth()/2-100, getHeight()/2-50, 200, 100, 10, RGB(RED));
         draw::text(getWidth()/2, getHeight()/2, "GAME OVER", RGB(YELLOW));
     }
@@ -49,59 +49,59 @@ void Controler2048::display() {
     glFlush();
 }
 
-void Controler2048::reshape(GLint w, GLint h) {
-    glViewport(0, 0, w, h);
+void Controler2048::reshape(GLint t_width, GLint t_height) {
+    glViewport(0, 0, t_width, t_height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0, w, h, 0, -1.0, 1.0);
+    glOrtho(0, t_width, t_height, 0, -1.0, 1.0);
 }
 
-void Controler2048::mouse(int button, int state, int x, int y){
+void Controler2048::mouse(int t_button, int t_state, int t_x, int t_y){
     
 }
 
-void Controler2048::timer(int t){
+void Controler2048::timer(int t_time){
     
 }
 
-void Controler2048::keyboard(unsigned char key, int x, int y){
+void Controler2048::keyboard(unsigned char t_key, int t_x, int t_y){
     pair<int, int> suc;
-    switch (key) {
+    switch (t_key) {
         case 27:
         {
-            delete _scene;
-            ofstream b(_bestPath);
-            b << _best;
+            delete m_scene;
+            ofstream b(m_bestPath);
+            b << m_best;
             b.close();
             exit(0);
             break;
         }
         case 'w':
-            if (!_gameOver) suc = _field->moveUp();
+            if (!m_gameOver) suc = m_field->moveUp();
             break;
         case 's':
-            if (!_gameOver) suc = _field->moveDown();
+            if (!m_gameOver) suc = m_field->moveDown();
             break;
         case 'a':
-            if (!_gameOver) suc = _field->moveLeft();
+            if (!m_gameOver) suc = m_field->moveLeft();
             break;
         case 'd':
-            if (!_gameOver) suc = _field->moveRight();
+            if (!m_gameOver) suc = m_field->moveRight();
             break;
         default:
             break;
     }
     
-    if(!_gameOver){
-        if((suc.first) || (_lastKey != key)) {
-            _field->createCell();
-            _score += suc.second;
-            if(_score > _best) _best = _score;
+    if(!m_gameOver){
+        if((suc.first) || (m_lastKey != t_key)) {
+            m_field->createCell();
+            m_score += suc.second;
+            if(m_score > m_best) m_best = m_score;
         }
-        _lastKey = key;
+        m_lastKey = t_key;
         
-        if(_field->isFull()){
-            _gameOver = !_field->check();
+        if(m_field->isFull()){
+            m_gameOver = !m_field->check();
         }
     }
     
@@ -109,10 +109,10 @@ void Controler2048::keyboard(unsigned char key, int x, int y){
 }
 
 int Controler2048::getWidth() const{
-    return _field->getWidth() + _space*2;
+    return m_field->getWidth() + m_space*2;
 }
 
 int Controler2048::getHeight() const{
-    return _field->getHeight() + _cellSize + _space*3;
+    return m_field->getHeight() + m_cellSize + m_space*3;
 }
 

@@ -20,7 +20,7 @@ public:
      c_r - скругление клетки
      */
     
-    void init(); //инициализация
+    void init() override; //инициализация
     void createCell(); //создание клетки
     
     int getWidth() const; //получение ширины
@@ -28,14 +28,14 @@ public:
     int isFull() const; //заполнено ли поле?
     int check() const; //проверка на возможность движения
     
-    string getGameObjectType() const; //получение типы объекта
+    string getGameObjectType() const override; //получение типы объекта
     
     pair<int, int> moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
     pair<int, int> moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
     pair<int, int> moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
     pair<int, int> moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
 protected:
-    void _selfRender() const; //отобржание самого объекта
+    void _selfRender() const override; //отобржание самого объекта
 private:
     int m_emptyCount; //количество свобожных клеток
     int m_width, m_height; //размеры
