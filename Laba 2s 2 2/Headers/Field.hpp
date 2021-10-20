@@ -8,6 +8,8 @@
 #include "Cell2048.hpp"
 #include "RGB.hpp"
 
+#include "../Fusion/Headers/TypeAlias.h"
+
 class Field: public GameObject{
 public:
     Field(int t_x, int t_y, GameObject * t_parent, int t_space, int t_size, int t_cellSize, int t_cellRound, string t_colorsPath);
@@ -30,10 +32,10 @@ public:
     
     string getGameObjectType() const override; //получение типы объекта
     
-    pair<int, int> moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
-    pair<int, int> moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
-    pair<int, int> moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
-    pair<int, int> moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
+    moveResult_t moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
+    moveResult_t moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
+    moveResult_t moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
+    moveResult_t moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
 protected:
     void _selfRender() const override; //отобржание самого объекта
 private:
@@ -46,10 +48,10 @@ private:
     
     int _power(int t_number, int t_power); //возведение в степень
     
-    pair<int, int> _columnMoveUp(int t_column); //движение клеток в столбце "i" вверх, возвращет успешность движения и количество очков
-    pair<int, int> _columnMoveDown(int t_column); //движение клеток в столбце "i" вниз, возвращет успешность движения и количество очков
-    pair<int, int> _rowMoveLeft(int t_row); //движение клеток в строке "i" влево, возвращет успешность движения и количество очков
-    pair<int, int> _rowMoveRight(int t_row); //движение клеток в строке "i" вправо, возвращет успешность движения и количество очков
+    moveResult_t _columnMoveUp(int t_column); //движение клеток в столбце "i" вверх, возвращет успешность движения и количество очков
+    moveResult_t _columnMoveDown(int t_column); //движение клеток в столбце "i" вниз, возвращет успешность движения и количество очков
+    moveResult_t _rowMoveLeft(int t_row); //движение клеток в строке "i" влево, возвращет успешность движения и количество очков
+    moveResult_t _rowMoveRight(int t_row); //движение клеток в строке "i" вправо, возвращет успешность движения и количество очков
     
     vector<vector<int>> m_data; //данные о клетках
     vector<RGB> m_colors; //цвета
