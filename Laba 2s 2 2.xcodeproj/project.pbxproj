@@ -18,6 +18,9 @@
 		2F12CEF12621CFBF00A7B17A /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEEF2621CFBF00A7B17A /* Field.cpp */; };
 		2F12CEF4262462B400A7B17A /* Cell2048.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEF2262462B400A7B17A /* Cell2048.cpp */; };
 		2F12CEF82626E05700A7B17A /* RGB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEF62626E05700A7B17A /* RGB.cpp */; };
+		2FB47232271C5A4500BB58B4 /* Model2048.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47230271C5A4500BB58B4 /* Model2048.cpp */; };
+		2FB47235271C5CB800BB58B4 /* Root.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47233271C5CB800BB58B4 /* Root.cpp */; };
+		2FB47238271C629300BB58B4 /* Alias.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47236271C629300BB58B4 /* Alias.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +64,13 @@
 		2FA21371262A2F0300BCEBCC /* Glut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glut.h; sourceTree = "<group>"; };
 		2FB4722E2713160700BB58B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2FB4722F27146C5C00BB58B4 /* SyntaxTarget.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SyntaxTarget.md; sourceTree = "<group>"; };
+		2FB47230271C5A4500BB58B4 /* Model2048.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Model2048.cpp; sourceTree = "<group>"; };
+		2FB47231271C5A4500BB58B4 /* Model2048.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Model2048.hpp; sourceTree = "<group>"; };
+		2FB47233271C5CB800BB58B4 /* Root.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Root.cpp; sourceTree = "<group>"; };
+		2FB47234271C5CB800BB58B4 /* Root.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Root.hpp; sourceTree = "<group>"; };
+		2FB47236271C629300BB58B4 /* Alias.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Alias.cpp; sourceTree = "<group>"; };
+		2FB47237271C629300BB58B4 /* Alias.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Alias.hpp; sourceTree = "<group>"; };
+		2FB472392720441C00BB58B4 /* TypeAlias.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeAlias.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +125,7 @@
 				2F12CEE726203FC400A7B17A /* Controler2048.hpp */,
 				2F12CEF02621CFBF00A7B17A /* Field.hpp */,
 				2F12CEF3262462B400A7B17A /* Cell2048.hpp */,
+				2FB47231271C5A4500BB58B4 /* Model2048.hpp */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -122,6 +133,7 @@
 		2F12CED1261F0E0A00A7B17A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2FB47230271C5A4500BB58B4 /* Model2048.cpp */,
 				2F12CEF2262462B400A7B17A /* Cell2048.cpp */,
 				2F12CEEF2621CFBF00A7B17A /* Field.cpp */,
 				2F12CEE626203FC400A7B17A /* Controler2048.cpp */,
@@ -150,6 +162,8 @@
 		2FB4722C2713128100BB58B4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2FB47236271C629300BB58B4 /* Alias.cpp */,
+				2FB47233271C5CB800BB58B4 /* Root.cpp */,
 				2F12CEF62626E05700A7B17A /* RGB.cpp */,
 				2F12CEEC2620EA9F00A7B17A /* TextBox.cpp */,
 				2F12CEE926204B5700A7B17A /* GameObject.cpp */,
@@ -170,6 +184,9 @@
 				2F12CEED2620EA9F00A7B17A /* TextBox.hpp */,
 				2F12CEF72626E05700A7B17A /* RGB.hpp */,
 				2FA21371262A2F0300BCEBCC /* Glut.h */,
+				2FB47234271C5CB800BB58B4 /* Root.hpp */,
+				2FB47237271C629300BB58B4 /* Alias.hpp */,
+				2FB472392720441C00BB58B4 /* TypeAlias.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -232,13 +249,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F12CEEB26204B5700A7B17A /* GameObject.cpp in Sources */,
+				2FB47232271C5A4500BB58B4 /* Model2048.cpp in Sources */,
 				2F12CEE826203FC400A7B17A /* Controler2048.cpp in Sources */,
 				2F12CEC4261F0D8600A7B17A /* main.cpp in Sources */,
 				2F12CED8261F0E0A00A7B17A /* Draw.cpp in Sources */,
 				2F12CEEE2620EA9F00A7B17A /* TextBox.cpp in Sources */,
 				2F12CEF4262462B400A7B17A /* Cell2048.cpp in Sources */,
+				2FB47238271C629300BB58B4 /* Alias.cpp in Sources */,
 				2F12CEF12621CFBF00A7B17A /* Field.cpp in Sources */,
 				2F12CEE1261F146800A7B17A /* Game.cpp in Sources */,
+				2FB47235271C5CB800BB58B4 /* Root.cpp in Sources */,
 				2F12CEF82626E05700A7B17A /* RGB.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
