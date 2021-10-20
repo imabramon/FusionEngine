@@ -5,6 +5,8 @@
 
 #include "../Fusion/Headers/AbstractControler.hpp"
 #include "../Fusion/Headers/GameObject.hpp"
+
+#include "Model2048.hpp"
 #include "Field.hpp"
 
 #include <string>
@@ -27,16 +29,15 @@ public:
     int getHeight() const override; //получение высоты окна
 private:
     GameObject * m_scene; //Объект сцены
-    
-    Field * m_field; //Объект поля
+    Model2048 m_model;
     
     unsigned char m_lastKey = ' '; //Последняя нажатая клавиша
     
-    int m_score = 0; //текущий счет
-    int m_best = 0; //лучший счет
-    int m_size; //количество ячеек
     int m_space; //растояние между объектами
     int m_cellSize, m_cellRound; //параметры ячейки
+    
+    int m_width;
+    int m_height;
     
     bool m_gameOver = false; //Проиграна ли игра?
     
