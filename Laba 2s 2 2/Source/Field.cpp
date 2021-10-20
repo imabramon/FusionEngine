@@ -31,7 +31,7 @@ Field::Field(int t_x, int t_y, GameObject * t_parent,
     
     in >> size;
     
-    for(int i = 0; i < m_size; i++){
+    for(int i = 0; i < size; i++){
         in >> tmp;
         m_colors.push_back(tmp);
     }
