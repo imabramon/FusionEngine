@@ -12,7 +12,7 @@
 
 class Field: public GameObject{
 public:
-    Field(int t_x, int t_y, GameObject * t_parent, int t_space, int t_size, int t_cellSize, int t_cellRound, string t_colorsPath);
+    Field(int t_x, int t_y, GameObject * t_parent, int t_space, int t_size, int t_cellSize, int t_cellRound, string t_colorsPath, intMatrix_t & t_matrix);
     /*
      tx, ty - координаты
      p - указатель на родительский объект
@@ -41,10 +41,11 @@ protected:
 private:
     int m_emptyCount; //количество свобожных клеток
     int m_width, m_height; //размеры
-    int m_size; //размер поля
     int m_space; //растояние между клетками
     int m_cellSize; //размер клетки
     int m_cellRound; //скругление клетки
+    
+    int m_size;
     
     int _power(int t_number, int t_power); //возведение в степень
     
@@ -53,7 +54,7 @@ private:
     moveResult_t _rowMoveLeft(int t_row); //движение клеток в строке "i" влево, возвращет успешность движения и количество очков
     moveResult_t _rowMoveRight(int t_row); //движение клеток в строке "i" вправо, возвращет успешность движения и количество очков
     
-    vector<vector<int>> m_data; //данные о клетках
+    vector<vector<int>> & m_data; //данные о клетках
     vector<RGB> m_colors; //цвета
 };
 

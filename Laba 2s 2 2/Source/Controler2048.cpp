@@ -12,10 +12,11 @@
 
 using namespace std;
 
-Controler2048::Controler2048(string t_path){
+Controler2048::Controler2048(string t_path): m_model(4){
     ifstream in(t_path);
     string colorsPath;
-    in >> m_size >> m_space >> m_cellSize >> m_cellRound >> m_bestPath >> colorsPath;
+    int size;
+    in >> size >> m_space >> m_cellSize >> m_cellRound >> m_bestPath >> colorsPath;
     in.close();
     
     ifstream b(m_bestPath);
@@ -24,7 +25,7 @@ Controler2048::Controler2048(string t_path){
     
     m_scene = new GameObject(0, 0, NULL);
     
-    m_field = new Field(m_space, m_cellSize + 2*m_space, m_scene, m_space, m_size, m_cellSize, m_cellRound, colorsPath);
+    m_field = new Field(m_space, m_cellSize + 2*m_space, m_scene, m_space, m_model.size(), m_cellSize, m_cellRound, colorsPath, m_model.data());
     m_field->init();
     
     *m_scene += new TextBox(m_space, m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_model.score());
@@ -32,8 +33,8 @@ Controler2048::Controler2048(string t_path){
     
     *m_scene += m_field;
     
-    m_field->createCell();
-    m_field->createCell();
+    m_model.createCell();
+    m_model.createCell();
 }
 
 void Controler2048::display() {
@@ -77,31 +78,33 @@ void Controler2048::keyboard(unsigned char t_key, int t_x, int t_y){
             break;
         }
         case 'w':
-            if (!m_gameOver) suc = m_field->moveUp();
+            if (!m_gameOver) suc = m_model.moveUp();
             break;
         case 's':
-            if (!m_gameOver) suc = m_field->moveDown();
+            if (!m_gameOver) suc = m_model.moveDown();
             break;
         case 'a':
-            if (!m_gameOver) suc = m_field->moveLeft();
+            if (!m_gameOver) suc = m_model.moveLeft();
             break;
         case 'd':
-            if (!m_gameOver) suc = m_field->moveRight();
+            if (!m_gameOver) suc = m_model.moveRight();
             break;
         default:
             break;
     }
     
     if(!m_gameOver){
+        cout << "Not game over" << endl;
         if((suc.first) || (m_lastKey != t_key)) {
-            m_field->createCell();
+            cout << "Can create cell" << endl;
+            m_model.createCell();
             m_model.score() += suc.second;
             if(m_model.score() > m_model.bestScore()) m_model.bestScore() = m_model.score();
         }
         m_lastKey = t_key;
         
         if(m_field->isFull()){
-            m_gameOver = !m_field->check();
+            m_gameOver = !m_model.check();
         }
     }
     
