@@ -8,8 +8,6 @@ Model2048::Model2048(int t_size): m_size(t_size), m_emptyCount(t_size*t_size){
             m_data[i][j] = 0;
         }
     }
-    
-    m_data[3][2] = 2;
 }
 
 Model2048::~Model2048(){}
