@@ -19,7 +19,7 @@ Controler2048::Controler2048(string t_path){
     in.close();
     
     ifstream b(m_bestPath);
-    b >> m_best;
+    b >> m_model.bestScore();
     b.close();
     
     m_scene = new GameObject(0, 0, NULL);
@@ -27,8 +27,8 @@ Controler2048::Controler2048(string t_path){
     m_field = new Field(m_space, m_cellSize + 2*m_space, m_scene, m_space, m_size, m_cellSize, m_cellRound, colorsPath);
     m_field->init();
     
-    *m_scene += new TextBox(m_space, m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_score);
-    *m_scene += new TextBox((m_field->getWidth()-m_space)/ 2 + m_space*2 , m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_best);
+    *m_scene += new TextBox(m_space, m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_model.score());
+    *m_scene += new TextBox((m_field->getWidth()-m_space)/ 2 + m_space*2 , m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_model.bestScore());
     
     *m_scene += m_field;
     
@@ -71,7 +71,7 @@ void Controler2048::keyboard(unsigned char t_key, int t_x, int t_y){
         {
             delete m_scene;
             ofstream b(m_bestPath);
-            b << m_best;
+            b << m_model.bestScore();
             b.close();
             exit(0);
             break;
@@ -95,8 +95,8 @@ void Controler2048::keyboard(unsigned char t_key, int t_x, int t_y){
     if(!m_gameOver){
         if((suc.first) || (m_lastKey != t_key)) {
             m_field->createCell();
-            m_score += suc.second;
-            if(m_score > m_best) m_best = m_score;
+            m_model.score() += suc.second;
+            if(m_model.score() > m_model.bestScore()) m_model.bestScore() = m_model.score();
         }
         m_lastKey = t_key;
         

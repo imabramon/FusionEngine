@@ -1,9 +1,25 @@
-//
-//  Model2048.cpp
-//  Laba 2s 2 2
-//
-//  Created by Влад Шелопугин on 17.10.2021.
-//  Copyright © 2021 Влад Шелопугин. All rights reserved.
-//
-
 #include "../Headers/Model2048.hpp"
+
+Model2048::Model2048(){
+    
+}
+
+Model2048::~Model2048(){
+    
+}
+
+int & Model2048::score() {
+    return m_score;
+}
+
+int & Model2048::bestScore() {
+    return m_best;
+}
+
+int & Model2048::emptyCount() {
+    return m_emptyCount;
+}
+
+intMatrix_t & Model2048::data(){
+    return m_data;
+}
