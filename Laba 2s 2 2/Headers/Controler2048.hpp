@@ -31,13 +31,13 @@ private:
     GameObject * m_scene; //Объект сцены
     Model2048 m_model;
     
-    Field * m_field; //Объект поля
-    
     unsigned char m_lastKey = ' '; //Последняя нажатая клавиша
     
-    int m_size; //количество ячеек
     int m_space; //растояние между объектами
     int m_cellSize, m_cellRound; //параметры ячейки
+    
+    int m_width;
+    int m_height;
     
     bool m_gameOver = false; //Проиграна ли игра?
     

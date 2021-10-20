@@ -25,13 +25,15 @@ Controler2048::Controler2048(string t_path): m_model(4){
     
     m_scene = new GameObject(0, 0, NULL);
     
-    m_field = new Field(m_space, m_cellSize + 2*m_space, m_scene, m_space, m_model.size(), m_cellSize, m_cellRound, colorsPath, m_model.data());
-    m_field->init();
+    auto m_field = new Field(m_space, m_cellSize + 2*m_space, m_scene, m_space, m_model.size(), m_cellSize, m_cellRound, colorsPath, m_model.data());
     
     *m_scene += new TextBox(m_space, m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_model.score());
     *m_scene += new TextBox((m_field->getWidth()-m_space)/ 2 + m_space*2 , m_space, (m_field->getWidth()-m_space) / 2, m_cellSize, m_cellRound, m_scene, &m_model.bestScore());
     
     *m_scene += m_field;
+    
+    m_width = m_field->getWidth() + m_space*2;
+    m_height = m_field->getHeight() + m_cellSize + m_space*3;
     
     m_model.createCell();
     m_model.createCell();
@@ -103,7 +105,7 @@ void Controler2048::keyboard(unsigned char t_key, int t_x, int t_y){
         }
         m_lastKey = t_key;
         
-        if(m_field->isFull()){
+        if(m_model.isFull()){
             m_gameOver = !m_model.check();
         }
     }
@@ -112,10 +114,10 @@ void Controler2048::keyboard(unsigned char t_key, int t_x, int t_y){
 }
 
 int Controler2048::getWidth() const{
-    return m_field->getWidth() + m_space*2;
+    return m_width;
 }
 
 int Controler2048::getHeight() const{
-    return m_field->getHeight() + m_cellSize + m_space*3;
+    return m_height;
 }
 

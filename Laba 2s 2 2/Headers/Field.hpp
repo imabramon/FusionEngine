@@ -24,8 +24,7 @@ public:
     
     int getWidth() const; //получение ширины
     int getHeight() const; //получение высоты
-    int isFull() const; //заполнено ли поле?
-    int check() const; //проверка на возможность движения
+    
     
     string getGameObjectType() const override; //получение типы объекта
     

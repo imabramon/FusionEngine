@@ -283,3 +283,7 @@ int Model2048::check() const{
     
     return 0;
 }
+
+int Model2048::isFull() const{
+    return m_emptyCount == 0;
+}

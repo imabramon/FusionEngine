@@ -70,9 +70,6 @@ int Field::getHeight() const{
     return m_height;
 }
 
-int Field::isFull() const{
-    return m_emptyCount == 0;
-}
 
 
 string Field::getGameObjectType() const{

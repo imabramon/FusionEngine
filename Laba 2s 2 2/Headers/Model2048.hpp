@@ -18,6 +18,7 @@ public:
     int & emptyCount();
     int & size();
     int check() const; //проверка на возможность движения
+    int isFull() const; //заполнено ли поле?
     
     intMatrix_t & data();
     
@@ -39,6 +40,7 @@ private:
     moveResult_t _rowMoveRight(int t_row); //движение клеток в строке "i" вправо, возвращет успешность движения и количество очков
     
     int _power(int t_number, int t_power);
+    
 };
 
 
