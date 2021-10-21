@@ -71,6 +71,7 @@
 		2FB47236271C629300BB58B4 /* Alias.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Alias.cpp; sourceTree = "<group>"; };
 		2FB47237271C629300BB58B4 /* Alias.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Alias.hpp; sourceTree = "<group>"; };
 		2FB472392720441C00BB58B4 /* TypeAlias.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeAlias.h; sourceTree = "<group>"; };
+		2FB4723B27218CFF00BB58B4 /* AbstractAction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AbstractAction.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +188,7 @@
 				2FB47234271C5CB800BB58B4 /* Root.hpp */,
 				2FB47237271C629300BB58B4 /* Alias.hpp */,
 				2FB472392720441C00BB58B4 /* TypeAlias.h */,
+				2FB4723B27218CFF00BB58B4 /* AbstractAction.hpp */,
 			);
 			path = Headers;
 			sourceTree = "<group>";

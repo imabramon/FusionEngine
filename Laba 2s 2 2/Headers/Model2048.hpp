@@ -8,6 +8,8 @@
 
 class Model2048 {
 public:
+    
+    
     Model2048(int t_size);
     ~Model2048();
     
