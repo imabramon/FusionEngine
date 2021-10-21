@@ -5,6 +5,7 @@
 
 #include "../Fusion/Headers/AbstractControler.hpp"
 #include "../Fusion/Headers/GameObject.hpp"
+#include "../Fusion/Headers/AbstractAction.hpp"
 
 #include "Model2048.hpp"
 #include "Field.hpp"
@@ -17,7 +18,7 @@ using namespace std;
 class Controler2048: public AbstractControler{
 public:
     Controler2048(string t_path); // path - путь к файлу с настройками игры
-    ~Controler2048(){ delete m_scene;}
+    ~Controler2048();
     
     void display() override; // функция отобржанеия
     void reshape(GLint t_width, GLint t_height) override; // функция изменения размера
@@ -42,6 +43,11 @@ private:
     bool m_gameOver = false; //Проиграна ли игра?
     
     string m_bestPath; //путь к файлу с лучшим счетом
+    
+    AbstractAction * m_moveUpAction;
+    AbstractAction * m_moveDownAction;
+    AbstractAction * m_moveRightAction;
+    AbstractAction * m_moveLeftAction;
 };
 
 #endif /* Controler2048_hpp */

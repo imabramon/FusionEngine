@@ -287,3 +287,14 @@ int Model2048::check() const{
 int Model2048::isFull() const{
     return m_emptyCount == 0;
 }
+
+Model2048::Action::Action(Model2048 * t_model, moveFunction t_function):m_model(t_model), m_function(t_function){}
+
+void Model2048::Action::perform(){
+    auto result = (m_model->*m_function)();
+    if(result.first){
+        m_model->score() += result.second;
+        if(m_model->score() > m_model->bestScore()) m_model->bestScore() = m_model->score();
+        //m_model->createCell();
+    }
+}

@@ -2,6 +2,8 @@
 #define AbstractAction_hpp
 
 class AbstractAction{
+public:
+    virtual ~AbstractAction(){}
     virtual void perform() = 0;
 };
 
