@@ -79,6 +79,11 @@ void Controler2048::timer(int t_time){
 }
 
 void Controler2048::keyboard(unsigned char t_key, int t_x, int t_y){
+    /* Keyboard Events List
+     * KeyPressed
+     * NotRepeatedPressed
+     *
+     */
     //pair<int, int> suc;
     switch (t_key) {
         case 27:

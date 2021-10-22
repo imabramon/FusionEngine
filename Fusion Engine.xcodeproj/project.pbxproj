@@ -36,7 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F12CEC0261F0D8600A7B17A /* Laba 2s 2 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Laba 2s 2 2"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F12CEC0261F0D8600A7B17A /* Fusion Engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Fusion Engine"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F12CEC3261F0D8600A7B17A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2F12CECF261F0E0A00A7B17A /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
 		2F12CED0261F0E0A00A7B17A /* Draw.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Draw.hpp; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		2F12CEB7261F0D8600A7B17A = {
 			isa = PBXGroup;
 			children = (
-				2F12CEC2261F0D8600A7B17A /* Laba 2s 2 2 */,
+				2F12CEC2261F0D8600A7B17A /* Fusuion Engine */,
 				2F12CEC1261F0D8600A7B17A /* Products */,
 				2F12CEDA261F115500A7B17A /* Frameworks */,
 			);
@@ -99,12 +99,12 @@
 		2F12CEC1261F0D8600A7B17A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F12CEC0261F0D8600A7B17A /* Laba 2s 2 2 */,
+				2F12CEC0261F0D8600A7B17A /* Fusion Engine */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2F12CEC2261F0D8600A7B17A /* Laba 2s 2 2 */ = {
+		2F12CEC2261F0D8600A7B17A /* Fusuion Engine */ = {
 			isa = PBXGroup;
 			children = (
 				2FB4722B2713125700BB58B4 /* Fusion */,
@@ -117,7 +117,7 @@
 				2FB4722E2713160700BB58B4 /* README.md */,
 				2FB4722F27146C5C00BB58B4 /* SyntaxTarget.md */,
 			);
-			path = "Laba 2s 2 2";
+			path = "Fusuion Engine";
 			sourceTree = "<group>";
 		};
 		2F12CECB261F0E0A00A7B17A /* Headers */ = {
@@ -196,9 +196,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F12CEBF261F0D8600A7B17A /* Laba 2s 2 2 */ = {
+		2F12CEBF261F0D8600A7B17A /* Fusion Engine */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F12CEC7261F0D8600A7B17A /* Build configuration list for PBXNativeTarget "Laba 2s 2 2" */;
+			buildConfigurationList = 2F12CEC7261F0D8600A7B17A /* Build configuration list for PBXNativeTarget "Fusion Engine" */;
 			buildPhases = (
 				2F12CEBC261F0D8600A7B17A /* Sources */,
 				2F12CEBD261F0D8600A7B17A /* Frameworks */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = "Laba 2s 2 2";
+			name = "Fusion Engine";
 			productName = "Laba 2s 2 2";
-			productReference = 2F12CEC0261F0D8600A7B17A /* Laba 2s 2 2 */;
+			productReference = 2F12CEC0261F0D8600A7B17A /* Fusion Engine */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +227,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F12CEBB261F0D8600A7B17A /* Build configuration list for PBXProject "Laba 2s 2 2" */;
+			buildConfigurationList = 2F12CEBB261F0D8600A7B17A /* Build configuration list for PBXProject "Fusion Engine" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -240,7 +240,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F12CEBF261F0D8600A7B17A /* Laba 2s 2 2 */,
+				2F12CEBF261F0D8600A7B17A /* Fusion Engine */,
 			);
 		};
 /* End PBXProject section */
@@ -396,7 +396,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F12CEBB261F0D8600A7B17A /* Build configuration list for PBXProject "Laba 2s 2 2" */ = {
+		2F12CEBB261F0D8600A7B17A /* Build configuration list for PBXProject "Fusion Engine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F12CEC5261F0D8600A7B17A /* Debug */,
@@ -405,7 +405,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F12CEC7261F0D8600A7B17A /* Build configuration list for PBXNativeTarget "Laba 2s 2 2" */ = {
+		2F12CEC7261F0D8600A7B17A /* Build configuration list for PBXNativeTarget "Fusion Engine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F12CEC8261F0D8600A7B17A /* Debug */,

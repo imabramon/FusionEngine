@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2F12CEBF261F0D8600A7B17A"
-               BuildableName = "Laba 2s 2 2"
-               BlueprintName = "Laba 2s 2 2"
-               ReferencedContainer = "container:Laba 2s 2 2.xcodeproj">
+               BuildableName = "Fusion Engine"
+               BlueprintName = "Fusion Engine"
+               ReferencedContainer = "container:Fusion Engine.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/vladselopugin/Documents/&#x421;++/&#x41e;&#x41f; 2 &#x441;&#x435;&#x43c;/Laba 2s 2 2/Laba 2s 2 2"
+      customWorkingDirectory = "/Users/vladselopugin/Documents/&#x421;++/&#x41e;&#x41f; 2 &#x441;&#x435;&#x43c;/Laba 2s 2 2/Fusuion Engine"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F12CEBF261F0D8600A7B17A"
-            BuildableName = "Laba 2s 2 2"
-            BlueprintName = "Laba 2s 2 2"
-            ReferencedContainer = "container:Laba 2s 2 2.xcodeproj">
+            BuildableName = "Fusion Engine"
+            BlueprintName = "Fusion Engine"
+            ReferencedContainer = "container:Fusion Engine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2F12CEBF261F0D8600A7B17A"
-            BuildableName = "Laba 2s 2 2"
-            BlueprintName = "Laba 2s 2 2"
-            ReferencedContainer = "container:Laba 2s 2 2.xcodeproj">
+            BuildableName = "Fusion Engine"
+            BlueprintName = "Fusion Engine"
+            ReferencedContainer = "container:Fusion Engine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

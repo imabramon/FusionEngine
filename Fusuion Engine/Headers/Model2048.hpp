@@ -27,6 +27,8 @@ public:
     
     intMatrix_t & data();
     
+    void extracted(int count, int flag);
+    
     moveResult_t moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
     moveResult_t moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
     moveResult_t moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
@@ -48,6 +50,8 @@ private:
     int m_size; //размер поля
     
     intMatrix_t m_data; //данные о клетках
+    
+    void countScore(int count, int flag);
     
     moveResult_t _columnMoveUp(int t_column); //движение клеток в столбце "i" вверх, возвращет успешность движения и количество очков
     moveResult_t _columnMoveDown(int t_column); //движение клеток в столбце "i" вниз, возвращет успешность движения и количество очков
