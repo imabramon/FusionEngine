@@ -6,6 +6,7 @@
 
 #include "../Fusion/Headers/TypeAlias.h"
 #include "../Fusion/Headers/AbstractAction.hpp"
+#include "../Fusion/Headers/AbstractEvent.hpp"
 
 class Model2048;
 
@@ -15,26 +16,18 @@ class Model2048 {
 public:
     Model2048(int t_size);
     ~Model2048();
-    
-    void createCell(); //создание клетки
-    
+    int check() const; //проверка на возможность движения
+    int isFull() const; //заполнено ли поле?
     int & score();
     int & bestScore();
     int & emptyCount();
     int & size();
-    int check() const; //проверка на возможность движения
-    int isFull() const; //заполнено ли поле?
-    
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    void createCell();
     intMatrix_t & data();
-    
-    void extracted(int count, int flag);
-    
-    void moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
-    void moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
-    void moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
-    void moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
-    
-    
     //Move to MACROS
     class Action : public AbstractAction{
     public:
@@ -60,7 +53,6 @@ private:
     moveResult_t _rowMoveRight(int t_row); //движение клеток в строке "i" вправо, возвращет успешность движения и количество очков
     
     int _power(int t_number, int t_power);
-    
 };
 
 

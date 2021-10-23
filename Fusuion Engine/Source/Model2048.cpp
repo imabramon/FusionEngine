@@ -3,8 +3,9 @@
 #include <iostream>
 
 Model2048::Model2048(int t_size): m_size(t_size), m_emptyCount(t_size*t_size), m_score(0){
-    for(int i = 0; i < m_size; i++) m_data.push_back(std::vector<int>(m_size));
-    
+    for(int i = 0; i < m_size; i++) {
+        m_data.push_back(std::vector<int>(m_size));
+    }
     for(int i = 0; i < m_size; i++){
         for(int j =0; j < m_size; j++){
             m_data[i][j] = 0;
@@ -52,6 +53,8 @@ void Model2048::moveUp(){
         count += temp.second;
     }
     
+    if(flag) createCell();
+    
     countScore(count, flag);
 }
 
@@ -63,6 +66,8 @@ void Model2048::moveDown(){
         flag += temp.first;
         count += temp.second;
     }
+    
+    if(flag) createCell();
     
     countScore(count, flag);
 }
@@ -76,6 +81,8 @@ void Model2048::moveLeft(){
         count += temp.second;
     }
     
+    if(flag) createCell();
+    
     countScore(count, flag);
 }
 
@@ -88,6 +95,8 @@ void Model2048::moveRight(){
         count += temp.second;
     }
     
+    if(flag) createCell();
+    
     countScore(count, flag);
 }
 
@@ -97,13 +106,14 @@ moveResult_t Model2048::_columnMoveUp(int t_column){
     for(int i = 0; i < m_size; i++){
         if(m_data[i][t_column] == 0){
             int j = i;
-            for(; j < m_size; j++) if(m_data[j][t_column] != 0){
-                m_data[i][t_column] = m_data[j][t_column];
-                m_data[j][t_column] = 0;
-                suc = 1;
-                break;
+            for(; j < m_size; j++){
+                if(m_data[j][t_column] != 0){
+                    m_data[i][t_column] = m_data[j][t_column];
+                    m_data[j][t_column] = 0;
+                    suc = 1;
+                    break;
+                }
             }
-            
             if(j == m_size) break;
         }
     }
@@ -294,7 +304,10 @@ void Model2048::createCell(){
 int Model2048::check() const{
     for(int i = 0; i < m_size-1; i++)
         for(int j = 0; j < m_size-1; j++)
-            if(m_data[i][j] == m_data[i][j+1] || m_data[i][j] == m_data[i+1][j] || m_data[i+1][j+1] == m_data[i][j+1] || m_data[i+1][j+1] == m_data[i+1][j]) return 1;
+            if(m_data[i][j] == m_data[i][j+1] ||
+               m_data[i][j] == m_data[i+1][j] ||
+               m_data[i+1][j+1] == m_data[i][j+1] ||
+               m_data[i+1][j+1] == m_data[i+1][j]) return 1;
     
     return 0;
 }
