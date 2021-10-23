@@ -1,5 +1,7 @@
 #include "../Headers/Model2048.hpp"
 
+#include <iostream>
+
 Model2048::Model2048(int t_size): m_size(t_size), m_emptyCount(t_size*t_size), m_score(0){
     for(int i = 0; i < m_size; i++) m_data.push_back(std::vector<int>(m_size));
     
@@ -41,7 +43,7 @@ void Model2048::countScore(int count, int flag) {
     }
 }
 
-moveResult_t Model2048::moveUp(){
+void Model2048::moveUp(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -51,11 +53,9 @@ moveResult_t Model2048::moveUp(){
     }
     
     countScore(count, flag);
-    
-    return moveResult_t(flag, count);
 }
 
-moveResult_t Model2048::moveDown(){
+void Model2048::moveDown(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -65,11 +65,9 @@ moveResult_t Model2048::moveDown(){
     }
     
     countScore(count, flag);
-    
-    return moveResult_t(flag, count);
 }
 
-moveResult_t Model2048::moveLeft(){
+void Model2048::moveLeft(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -79,11 +77,9 @@ moveResult_t Model2048::moveLeft(){
     }
     
     countScore(count, flag);
-    
-    return moveResult_t(flag, count);
 }
 
-moveResult_t Model2048::moveRight(){
+void Model2048::moveRight(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -93,8 +89,6 @@ moveResult_t Model2048::moveRight(){
     }
     
     countScore(count, flag);
-    
-    return moveResult_t(flag, count);
 }
 
 moveResult_t Model2048::_columnMoveUp(int t_column){
@@ -312,10 +306,6 @@ int Model2048::isFull() const{
 Model2048::Action::Action(Model2048 * t_model, moveFunction t_function):m_model(t_model), m_function(t_function){}
 
 void Model2048::Action::perform(){
+    std::cout << "Action \"" << this << "\" permorm" << std::endl;
     (m_model->*m_function)();
-//    if(result.first){
-//        m_model->score() += result.second;
-//        if(m_model->score() > m_model->bestScore()) m_model->bestScore() = m_model->score();
-//        //m_model->createCell();
-//    }
 }

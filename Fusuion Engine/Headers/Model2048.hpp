@@ -9,7 +9,7 @@
 
 class Model2048;
 
-typedef moveResult_t (Model2048::*moveFunction)();
+typedef void (Model2048::*moveFunction)(void);
 
 class Model2048 {
 public:
@@ -29,18 +29,19 @@ public:
     
     void extracted(int count, int flag);
     
-    moveResult_t moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
-    moveResult_t moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
-    moveResult_t moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
-    moveResult_t moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
+    void moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
+    void moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
+    void moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
+    void moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
     
+    
+    //Move to MACROS
     class Action : public AbstractAction{
     public:
         Action(Model2048 * t_model, moveFunction t_function);
         void perform() override;
     private:
         moveFunction m_function;
-        //std::function<moveResult_t(void)> m_func;
         Model2048 * m_model;
     };
 private:
