@@ -67,7 +67,6 @@ string GameObject::getGameObjectType() const{
     return "GameObject";
 }
 
-
 GameObject & GameObject::operator +=(GameObject * t_object){
     m_child.push_back(t_object);
     return *this;

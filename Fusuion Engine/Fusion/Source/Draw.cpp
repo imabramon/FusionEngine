@@ -4,14 +4,7 @@
 #include <cmath>
 
 
-void draw::circle(int t_x, int t_y, int t_radius, RGB t_color)
-/*
-Рисует закрашенный круг
-x, y - координаты
-r - радиус
-cr, cg, cb - цвет
-*/
-{
+void draw::circle(int t_x, int t_y, int t_radius, RGB t_color){
     
     int  num_segments = 100;
     glClearColor(1.0,1.0,1.0,0.0);
@@ -31,14 +24,7 @@ cr, cg, cb - цвет
     glEnd();
 }
 
-void draw::rect(int t_x, int t_y, int t_width, int t_height, RGB t_color)
-/*
-Рисует закрашенный круг
-x, y - координаты
-w, h - ширина и высота
-cr, cg, cb - цвет
-*/
-{
+void draw::rect(int t_x, int t_y, int t_width, int t_height, RGB t_color){
     glClearColor(1.0,1.0,1.0,0.0);
     glColor3ub(t_color.getRed(), t_color.getGreen(), t_color.getBlue());
     glBegin(GL_TRIANGLE_FAN);
@@ -49,15 +35,7 @@ cr, cg, cb - цвет
     glEnd();
 }
 
-void draw::roundRect(int t_x, int t_y, int t_width, int t_height, int t_radius, RGB t_color)
-/*
-Рисует закрашенный круг
-x, y - координаты
-w, h - ширина и высота
-r - радиус скругления
-cr, cg, cb - цвет
-*/
-{
+void draw::roundRect(int t_x, int t_y, int t_width, int t_height, int t_radius, RGB t_color){
     draw::circle(t_x+t_radius,
                  t_y+t_radius,
                  t_radius,

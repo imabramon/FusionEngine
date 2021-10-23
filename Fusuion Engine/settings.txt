@@ -1,6 +1,6 @@
 4
 10
 100
-25
+30
 best.txt
 colors.txt

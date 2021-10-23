@@ -5,6 +5,11 @@
 #include <iostream>
 
 #include "../Fusion/Headers/TypeAlias.h"
+#include "../Fusion/Headers/AbstractAction.hpp"
+
+class Model2048;
+
+typedef void (Model2048::*moveFunction)(void);
 
 class Model2048 {
 public:
@@ -22,10 +27,23 @@ public:
     
     intMatrix_t & data();
     
-    moveResult_t moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
-    moveResult_t moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
-    moveResult_t moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
-    moveResult_t moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
+    void extracted(int count, int flag);
+    
+    void moveUp(); //движение всех клеток вверх, возвращет успешность движения и количество очков
+    void moveDown(); //движение всех клеток вниз, возвращет успешность движения и количество очков
+    void moveLeft(); //движение всех клеток влево, возвращет успешность движения и количество очков
+    void moveRight(); //движение всех клеток вправо, возвращет успешность движения и количество очков
+    
+    
+    //Move to MACROS
+    class Action : public AbstractAction{
+    public:
+        Action(Model2048 * t_model, moveFunction t_function);
+        void perform() override;
+    private:
+        moveFunction m_function;
+        Model2048 * m_model;
+    };
 private:
     int m_score; //текущий счет
     int m_best; //лучший счет
@@ -33,6 +51,8 @@ private:
     int m_size; //размер поля
     
     intMatrix_t m_data; //данные о клетках
+    
+    void countScore(int count, int flag);
     
     moveResult_t _columnMoveUp(int t_column); //движение клеток в столбце "i" вверх, возвращет успешность движения и количество очков
     moveResult_t _columnMoveDown(int t_column); //движение клеток в столбце "i" вниз, возвращет успешность движения и количество очков

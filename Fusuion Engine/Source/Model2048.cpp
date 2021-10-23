@@ -1,6 +1,8 @@
 #include "../Headers/Model2048.hpp"
 
-Model2048::Model2048(int t_size): m_size(t_size), m_emptyCount(t_size*t_size){
+#include <iostream>
+
+Model2048::Model2048(int t_size): m_size(t_size), m_emptyCount(t_size*t_size), m_score(0){
     for(int i = 0; i < m_size; i++) m_data.push_back(std::vector<int>(m_size));
     
     for(int i = 0; i < m_size; i++){
@@ -32,7 +34,16 @@ intMatrix_t & Model2048::data(){
     return m_data;
 }
 
-moveResult_t Model2048::moveUp(){
+void Model2048::countScore(int count, int flag) {
+    if(flag){
+        m_score += count;
+        if(m_score > m_best){
+            m_best = m_score;
+        }
+    }
+}
+
+void Model2048::moveUp(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -40,10 +51,11 @@ moveResult_t Model2048::moveUp(){
         flag += temp.first;
         count += temp.second;
     }
-    return moveResult_t(flag, count);
+    
+    countScore(count, flag);
 }
 
-moveResult_t Model2048::moveDown(){
+void Model2048::moveDown(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -51,10 +63,11 @@ moveResult_t Model2048::moveDown(){
         flag += temp.first;
         count += temp.second;
     }
-    return moveResult_t(flag, count);
+    
+    countScore(count, flag);
 }
 
-moveResult_t Model2048::moveLeft(){
+void Model2048::moveLeft(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -62,10 +75,11 @@ moveResult_t Model2048::moveLeft(){
         flag += temp.first;
         count += temp.second;
     }
-    return moveResult_t(flag, count);
+    
+    countScore(count, flag);
 }
 
-moveResult_t Model2048::moveRight(){
+void Model2048::moveRight(){
     int count = 0;
     int flag = 0;
     for(int i = 0; i < m_size; i++){
@@ -73,7 +87,8 @@ moveResult_t Model2048::moveRight(){
         flag = temp.first;
         count += temp.second;
     }
-    return moveResult_t(flag, count);
+    
+    countScore(count, flag);
 }
 
 moveResult_t Model2048::_columnMoveUp(int t_column){
@@ -286,4 +301,11 @@ int Model2048::check() const{
 
 int Model2048::isFull() const{
     return m_emptyCount == 0;
+}
+
+Model2048::Action::Action(Model2048 * t_model, moveFunction t_function):m_model(t_model), m_function(t_function){}
+
+void Model2048::Action::perform(){
+    std::cout << "Action \"" << this << "\" permorm" << std::endl;
+    (m_model->*m_function)();
 }

@@ -5,6 +5,7 @@
 
 #include "../Fusion/Headers/AbstractControler.hpp"
 #include "../Fusion/Headers/GameObject.hpp"
+#include "../Fusion/Headers/AbstractAction.hpp"
 
 #include "Model2048.hpp"
 #include "Field.hpp"
@@ -17,21 +18,21 @@ using namespace std;
 class Controler2048: public AbstractControler{
 public:
     Controler2048(string t_path); // path - путь к файлу с настройками игры
-    ~Controler2048(){ delete m_scene;}
     
     void display() override; // функция отобржанеия
     void reshape(GLint t_width, GLint t_height) override; // функция изменения размера
     void mouse(int t_button, int t_state, int t_x, int t_y) override; // функция обработки мыши
     void timer(int t_time) override; // функция таймера
-    void keyboard(unsigned char t_key, int t_x, int t_y) override; // функция обработки клавиатуры
     
     int getWidth() const override; //получение ширины окна
     int getHeight() const override; //получение высоты окна
+protected:
+    void __destructor() override;
 private:
     GameObject * m_scene; //Объект сцены
     Model2048 m_model;
     
-    unsigned char m_lastKey = ' '; //Последняя нажатая клавиша
+    //unsigned char m_lastKey = ' '; //Последняя нажатая клавиша
     
     int m_space; //растояние между объектами
     int m_cellSize, m_cellRound; //параметры ячейки
@@ -42,6 +43,7 @@ private:
     bool m_gameOver = false; //Проиграна ли игра?
     
     string m_bestPath; //путь к файлу с лучшим счетом
+    
 };
 
 #endif /* Controler2048_hpp */

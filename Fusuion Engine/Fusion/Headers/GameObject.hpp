@@ -21,7 +21,7 @@ public:
     virtual void init();
     
     /*!
-        @brief Ренедер объекта
+        @brief Рендер объекта
     */
     void render() const;
     

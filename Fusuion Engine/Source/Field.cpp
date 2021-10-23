@@ -43,8 +43,7 @@ Field::Field(int t_x, int t_y, GameObject * t_parent,
             //m_data[i][j] = 0;
             *this += new Cell2048((m_cellSize+m_space)*j + m_space,
                                   (m_cellSize+m_space)*i + m_space,
-                                  m_cellSize, m_cellSize,
-                                  m_cellRound,
+                                  m_cellSize, m_cellSize,m_cellRound,
                                   this,
                                   &m_data[i][j],
                                   m_colors);
@@ -54,10 +53,8 @@ Field::Field(int t_x, int t_y, GameObject * t_parent,
 
 
 void Field::_selfRender() const{
-    draw::roundRect(getX(),
-                    getY(),
-                    m_width,
-                    m_height,
+    draw::roundRect(getX(), getY(),
+                    m_width, m_height,
                     m_space,
                     RGB(GREY));
 }
