@@ -81,6 +81,7 @@
 		2FB4724127235DAF00BB58B4 /* AbstractEvent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractEvent.cpp; sourceTree = "<group>"; };
 		2FB4724227235DAF00BB58B4 /* AbstractEvent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AbstractEvent.hpp; sourceTree = "<group>"; };
 		2FB472442724181A00BB58B4 /* AbstractControler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractControler.cpp; sourceTree = "<group>"; };
+		2FB4724727242EC200BB58B4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		2F12CEB7261F0D8600A7B17A = {
 			isa = PBXGroup;
 			children = (
+				2FB4724727242EC200BB58B4 /* .gitignore */,
 				2F12CEC2261F0D8600A7B17A /* Fusuion Engine */,
 				2F12CEC1261F0D8600A7B17A /* Products */,
 				2F12CEDA261F115500A7B17A /* Frameworks */,
