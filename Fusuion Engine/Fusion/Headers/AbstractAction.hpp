@@ -10,14 +10,16 @@
 class AbstractAction{
 public:
     /*!
-     *\brief some brief
+     *\brief Destructor
      *\author imabramon
+     *\version 1.0
      */
     virtual ~AbstractAction(){}
     
     /*!
-     *\brief some brief
+     *\brief Event Called Function
      *\author imabramon
+     *\version 1.0
      */
     virtual void perform() = 0;
 };
