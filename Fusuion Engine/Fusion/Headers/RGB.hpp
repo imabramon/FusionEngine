@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/*!
+ *\brief Class for working with color
+ *\author imabramon
+ *\version 1.0
+ */
+
 class RGB{
 public:
     RGB(int t_red = 0, int t_green = 0, int t_blue = 0);

@@ -8,9 +8,19 @@
 
 using namespace std;
 
+/*!
+ *\brief A wrapper over glut functions that allows to implement a controller class
+ *\author imabramon
+ *\version 1.0
+ */
+
 
 class Game{
 public:
+    /*!
+     *\brief some brief
+     *\author imabramon
+     */
     Game(AbstractControler * t_controller);
     
     static void display(); //Функция отображения

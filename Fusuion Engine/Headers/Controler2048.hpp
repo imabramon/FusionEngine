@@ -14,6 +14,11 @@
 
 using namespace std;
 
+/*!
+ *\brief Contoler implementation for 2048 game
+ *\author imabramon
+ *\version 1.0
+ */
 
 class Controler2048: public AbstractControler{
 public:
@@ -31,8 +36,6 @@ protected:
 private:
     GameObject * m_scene; //Объект сцены
     Model2048 m_model;
-    
-    //unsigned char m_lastKey = ' '; //Последняя нажатая клавиша
     
     int m_space; //растояние между объектами
     int m_cellSize, m_cellRound; //параметры ячейки

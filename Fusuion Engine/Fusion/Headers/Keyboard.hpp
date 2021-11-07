@@ -6,6 +6,12 @@
 #include "Keys.h"
 #include "AbstractEvent.hpp"
 
+/*!
+ *\brief Class for interacting with the keyboard
+ *\author imabramon
+ *\version 1.0
+ */
+
 class Keyboard{
 public:
     Keyboard();
