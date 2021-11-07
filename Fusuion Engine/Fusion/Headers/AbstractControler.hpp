@@ -21,21 +21,73 @@ public:
     AbstractControler();
     ~AbstractControler();
     
-    virtual void display() = 0; // интерфейс функции отобржанеия
-    virtual void reshape(GLint t_width, GLint t_height)  = 0; // интерфейс функции изменения размера
-    virtual void mouse(int t_button, int t_state, int t_x, int t_y)  = 0; // интерфейс функции обработки
-    virtual void timer(int t_t) = 0; // интерфейс функции таймера
-    void keyboard(unsigned char t_key, int t_x, int t_y); // интерфейс функции обработки
-    
-    virtual int getWidth() const = 0; // интерфейс получения ширины окна
-    virtual int getHeight() const = 0; // интерфейс получения высоты окна
+    /*!
+     *\brief Glut display function interface
+     *\author imabramon
+     *\version 1.0
+     */
+    virtual void display() = 0;
+    /*!
+     *\brief glut reshape function interface
+     *\param t_width Window width
+     *\param t_height Winbdow heigh
+     *\author imabramon
+     *\version 1.0
+     */
+    virtual void reshape(GLint t_width, GLint t_height)  = 0;
+    /*!
+     *\brief Glut mouse function interface
+     *\author imabramon
+     *\version 1.0
+     *\param t_button Pressed button
+     *\param t_state mouse state
+     *\param t_x mouse cursor x coordinate
+     *\param t_y mouse cursor y coordinate
+     */
+    virtual void mouse(int t_button, int t_state, int t_x, int t_y)  = 0;
+    /*!
+     *\brief Glut timer function interface
+     *\param t_t Time
+     *\author imabramon
+     *\version 1.0
+     */
+    virtual void timer(int t_t) = 0;
+    /*!
+     *\brief glut keyboard function interface
+     *\author imabramon
+     *\version 1.0
+     */
+    void keyboard(unsigned char t_key, int t_x, int t_y);
     
     /*!
-     *\brief Connect Event to Action
+     *\brief Getting the current window width
+     *\return Current window width
+     *\author imabramon
+     *\version 1.0
      */
+    virtual int getWidth() const = 0;
+    /*!
+     *\brief Getting the current window height
+     *\return Current window height
+     *\author imabramon
+     *\version 1.0
+     */
+    virtual int getHeight() const = 0;
     
+    /*!
+     *\brief Connect event to action
+     *\param t_event Event
+     *\param t_action Action
+     *\author imabramon
+     *\version 1.0
+     */
     void connect(AbstractEvent * t_event, AbstractAction * t_action);
 protected:
+    /*!
+     *\brief Destructor interface
+     *\author imabramon
+     *\version 1.0
+     */
     virtual void __destructor() = 0;
     Keyboard m_keyboard;
 private:
