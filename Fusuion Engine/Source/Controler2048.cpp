@@ -56,9 +56,6 @@ Controler2048::Controler2048(string t_path): m_model(4){
     connect(m_keyboard.keyPressed(Key::A), new Model2048::Action(&m_model, &Model2048::moveLeft));
     connect(m_keyboard.keyPressed(Key::S), new Model2048::Action(&m_model, &Model2048::moveDown));
     connect(m_keyboard.keyPressed(Key::D), new Model2048::Action(&m_model, &Model2048::moveRight));
-    //connect(m_model.succsesfulMoveEvent(), new Model2048::Action(&m_model, &Model2048::createCell));
-    //connect(m_keyboard.notDoublePressed(), new Model2048::Action(&m_model, &Model2048::createCell));
-    
     
     m_model.createCell();
     m_model.createCell();

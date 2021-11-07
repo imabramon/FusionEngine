@@ -11,7 +11,19 @@ using namespace std;
 
 class GameObject{
 public:
+    /*!
+        \brief Конструктор
+        \param t_x х-координата
+        \param t_y y-координата
+        \param t_parent родительский объект
+        \todo Call
+     */
     GameObject(int t_x, int t_y, GameObject * t_parent);
+    
+    /*!
+     *\brief Деструктор. Удаляет все свои дочерние объекты
+     *\
+     */
     
     virtual ~GameObject();
     

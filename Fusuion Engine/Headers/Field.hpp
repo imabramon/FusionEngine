@@ -11,6 +11,9 @@
 #include "../Fusion/Headers/TypeAlias.h"
 
 class Field: public GameObject{
+    /*!
+        @brief: Call
+     */
 public:
     Field(int t_x, int t_y, GameObject * t_parent, int t_space, int t_size, int t_cellSize, int t_cellRound, string t_colorsPath, intMatrix_t & t_matrix);
     /*

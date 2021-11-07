@@ -11,6 +11,10 @@ using namespace std;
 
 class Game{
 public:
+    /*!
+     *\brief some brief
+     *\author imabramon
+     */
     Game(AbstractControler * t_controller);
     
     static void display(); //Функция отображения

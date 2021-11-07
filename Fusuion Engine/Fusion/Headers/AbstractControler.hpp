@@ -22,6 +22,10 @@ public:
     virtual int getWidth() const = 0; // интерфейс получения ширины окна
     virtual int getHeight() const = 0; // интерфейс получения высоты окна
     
+    /*!
+     *\brief Connect Event to Action
+     */
+    
     void connect(AbstractEvent * t_event, AbstractAction * t_action);
 protected:
     virtual void __destructor() = 0;

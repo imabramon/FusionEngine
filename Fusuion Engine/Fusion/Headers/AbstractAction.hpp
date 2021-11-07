@@ -3,7 +3,16 @@
 
 class AbstractAction{
 public:
+    /*!
+     *\brief some brief
+     *\author imabramon
+     */
     virtual ~AbstractAction(){}
+    
+    /*!
+     *\brief some brief
+     *\author imabramon
+     */
     virtual void perform() = 0;
 };
 
