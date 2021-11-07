@@ -10,6 +10,12 @@
 
 #include "../Fusion/Headers/TypeAlias.h"
 
+/*!
+ *\brief The class responsible for displaying the field
+ *\author imabramon
+ *\version 1.0
+ */
+
 class Field: public GameObject{
     /*!
         @brief: Call

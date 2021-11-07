@@ -1,6 +1,10 @@
 #ifndef Keys_h
 #define Keys_h
 
+/*!
+ *\todo Move to Keyboard class
+ */
+
 enum Key{
     A = 'a', B, C, D,
     E, F, G, H, I, J,

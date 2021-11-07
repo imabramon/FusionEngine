@@ -4,6 +4,12 @@
 #include "GameObject.hpp"
 #include "RGB.hpp"
 
+/*!
+ *\brief Class which displays some text inside round rectangle
+ *\author imabramon
+ *\version 1.0
+ */
+
 class TextBox: public GameObject{
 public:
     TextBox(int t_x, int t_y, int t_width, int t_height, int t_radius, GameObject * t_parent, int * t_score);

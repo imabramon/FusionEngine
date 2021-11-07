@@ -8,6 +8,12 @@
 
 using namespace std;
 
+/*!
+ *\brief A wrapper over glut functions that allows to implement a controller class
+ *\author imabramon
+ *\version 1.0
+ */
+
 
 class Game{
 public:

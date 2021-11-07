@@ -4,6 +4,13 @@
 #include "AbstractAction.hpp"
 #include <vector>
 
+/*!
+ *\brief Base class for Events. Part of implementation of observer pattern
+ *\author imabramon
+ *\version 1.0
+ */
+
+
 class AbstractEvent{
 public:
     AbstractEvent();

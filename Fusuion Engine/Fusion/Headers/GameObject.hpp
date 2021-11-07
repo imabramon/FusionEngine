@@ -6,7 +6,9 @@
 using namespace std;
 
 /*!
-  @brief Основной класс для всех объектов
+ *\brief Base class for all game object. Allows you to store all objects in a tree. Can display objects
+ *\author imabramon
+ *\version 1.0
 */
 
 class GameObject{

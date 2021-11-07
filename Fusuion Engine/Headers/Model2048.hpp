@@ -12,6 +12,12 @@ class Model2048;
 
 typedef void (Model2048::*moveFunction)(void);
 
+/*!
+ *\brief A class that contains all the 2048 game data
+ *\author imabramon
+ *\version 1.0
+ */
+
 class Model2048 {
 public:
     Model2048(int t_size);

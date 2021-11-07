@@ -8,6 +8,14 @@
 #include "AbstractEvent.hpp"
 #include "AbstractAction.hpp"
 
+/*!
+ *\brief Base Contoler class.
+ *       Directly calls glut functions, giving the user an easier way to develop a game
+ *       using a keyboard object, an event-action system
+ *\author imabramon
+ *\version 1.0
+ */
+
 class AbstractControler{
 public:
     AbstractControler();

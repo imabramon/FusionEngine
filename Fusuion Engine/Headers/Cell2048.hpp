@@ -5,13 +5,9 @@
 #include "RGB.hpp"
 
 /*!
-    @brief Дочерний класс
-    @author im_abramon
-    @version 1.0
-    @date Февраль 2021
-    @warning Данный класс создан только в учебных целях
-
-    Обычный дочерний класс, который отнаследован от ранее созданного класса Parent
+ *\brief A class that displays a cell and changes its color depending on the cell data
+ *\author imabramon
+ *\version 1.0
 */
 
 class Cell2048: public TextBox{
