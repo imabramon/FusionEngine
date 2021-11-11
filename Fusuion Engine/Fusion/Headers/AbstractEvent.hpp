@@ -9,8 +9,6 @@
  *\author imabramon
  *\version 1.0
  */
-
-
 class AbstractEvent{
 public:
     AbstractEvent();
