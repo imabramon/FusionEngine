@@ -8,25 +8,50 @@ using namespace std;
 /*!
  *\brief Class for working with color
  *\author imabramon
- *\version 1.0
+ *\version 0.1
  */
-
 class RGB{
 public:
+    /*!
+     *\brief Default contructor
+     *\param t_red Red component
+     *\param t_green Green component
+     *\param t_blue Blue component
+     *\author imabramon
+     *\version 0.1
+     */
     RGB(int t_red = 0, int t_green = 0, int t_blue = 0);
-    /*
-     Цвет по кофенцентам
-     tr - красный
-     tg - зеленый
-     tb - синий
+    
+    /*!
+     *\brief Default contructor
+     *\param t_hex Hex number as string
+     *\author imabramon
+     *\version 0.1
      */
     RGB(string t_hex);
-    /*
-     Цвет по коду hex
-     */
     
-    int getRed() const; //Поучение красного
-    int getGreen() const; //Получение зеленого
+    /*!
+     *\brief Default contructor
+     *\return Red component
+     *\author imabramon
+     *\version 0.1
+     */
+    int getRed() const;
+    
+    /*!
+     *\brief Default contructor
+     *\return Green component
+     *\author imabramon
+     *\version 0.1
+     */
+    int getGreen() const;
+    
+    /*!
+     *\brief Default contructor
+     *\return Blue component
+     *\author imabramon
+     *\version 0.1
+     */
     int getBlue() const; // Получение синего
 private:
     int m_red, m_green, m_blue; //коффиценты
