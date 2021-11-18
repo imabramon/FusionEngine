@@ -11,7 +11,7 @@ namespace draw {
     /*!
      *\brief Draw a circle
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      *\param t_x X coordinate
      *\param t_y Y coordinate
      *\param t_radius Circle radius
@@ -22,7 +22,7 @@ namespace draw {
     /*!
      *\brief Draw a rectangle
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      *\param t_x X coordinate
      *\param t_y Y coordinate
      *\param t_width Rectangle width
@@ -34,7 +34,7 @@ namespace draw {
     /*!
      *\brief Draw a rounded rectangle
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      *\param t_x X coordinate
      *\param t_y Y coordinate
      *\param t_width Rectangle width
@@ -47,7 +47,7 @@ namespace draw {
     /*!
      *\brief Draw a text
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      *\param t_x X coordinate
      *\param t_y Y coordinate
      *\param t_string Text

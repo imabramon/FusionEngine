@@ -13,7 +13,7 @@
  *       Directly calls glut functions, giving the user an easier way to develop a game
  *       using a keyboard object, an event-action system
  *\author imabramon
- *\version 1.0
+ *\version 0.1
  */
 
 class AbstractControler{
@@ -24,7 +24,7 @@ public:
     /*!
      *\brief Glut display function interface
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     virtual void display() = 0;
     /*!
@@ -32,7 +32,7 @@ public:
      *\param t_width Window width
      *\param t_height Winbdow heigh
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     virtual void reshape(GLint t_width, GLint t_height)  = 0;
     /*!
@@ -49,13 +49,13 @@ public:
      *\brief Glut timer function interface
      *\param t_t Time
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     virtual void timer(int t_t) = 0;
     /*!
      *\brief glut keyboard function interface
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     void keyboard(unsigned char t_key, int t_x, int t_y);
     
@@ -63,14 +63,14 @@ public:
      *\brief Getting the current window width
      *\return Current window width
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     virtual int getWidth() const = 0;
     /*!
      *\brief Getting the current window height
      *\return Current window height
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     virtual int getHeight() const = 0;
     
@@ -79,14 +79,14 @@ public:
      *\param t_event Event
      *\param t_action Action
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     void connect(AbstractEvent * t_event, AbstractAction * t_action);
 protected:
     /*!
      *\brief Destructor interface
      *\author imabramon
-     *\version 1.0
+     *\version 0.1
      */
     virtual void __destructor() = 0;
     Keyboard m_keyboard;
