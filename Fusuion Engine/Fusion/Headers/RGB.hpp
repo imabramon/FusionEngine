@@ -52,11 +52,17 @@ public:
      *\author imabramon
      *\version 0.1
      */
-    int getBlue() const; // Получение синего
+    int getBlue() const;
 private:
-    int m_red, m_green, m_blue; //коффиценты
+    int m_red, m_green, m_blue;
     
-    int _hexToDec(char t_hexDigit) const; //Приведение "с" в десятичную cc
+    /*!
+     *\brief Covert hex char to number
+     *\return Number of hex char
+     *\author imabramon
+     *\version 0.1
+     */
+    int _hexToDec(char t_hexDigit) const;
 };
 
 #endif /* RGB_hpp */
