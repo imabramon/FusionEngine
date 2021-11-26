@@ -4,20 +4,22 @@
 /*!
  *\brief Base class for Actions. Part of implementation of observer pattern
  *\author imabramon
- *\version 1.0
+ *\version 0.1
  */
 
 class AbstractAction{
 public:
     /*!
-     *\brief some brief
+     *\brief Destructor
      *\author imabramon
+     *\version 0.1
      */
     virtual ~AbstractAction(){}
     
     /*!
-     *\brief some brief
+     *\brief Event Called Function
      *\author imabramon
+     *\version 0.1
      */
     virtual void perform() = 0;
 };

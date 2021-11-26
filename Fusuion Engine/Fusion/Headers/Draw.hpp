@@ -8,34 +8,52 @@
 #include "RGB.hpp"
 
 namespace draw {
-    void circle(int t_x, int t_y, int t_radius, RGB t_color);
-    /*
-     Рисует закрашенный круг
-     x, y - координаты
-     r - радиус
-     cr, cg, cb - цвет
+    /*!
+     *\brief Draw a circle
+     *\author imabramon
+     *\version 0.1
+     *\param t_x X coordinate
+     *\param t_y Y coordinate
+     *\param t_radius Circle radius
+     *\param t_color Circle color
      */
-
-    void rect(int t_x, int t_y, int t_width, int t_height, RGB t_colors);
-    /*
-    Рисует закрашенный круг
-    x, y - координаты
-    w, h - ширина и высота
-    cr, cg, cb - цвет
-    */
-
+    void circle(int t_x, int t_y, int t_radius, RGB t_color);
+    
+    /*!
+     *\brief Draw a rectangle
+     *\author imabramon
+     *\version 0.1
+     *\param t_x X coordinate
+     *\param t_y Y coordinate
+     *\param t_width Rectangle width
+     *\param t_height Rectangle height
+     *\param t_color Rectangle color
+     */
+    void rect(int t_x, int t_y, int t_width, int t_height, RGB t_color);
+    
+    /*!
+     *\brief Draw a rounded rectangle
+     *\author imabramon
+     *\version 0.1
+     *\param t_x X coordinate
+     *\param t_y Y coordinate
+     *\param t_width Rectangle width
+     *\param t_height Rectangle height
+     *\param t_radius Rounding radius
+     *\param t_color Rectangle color
+     */
     void roundRect(int t_x, int t_y, int t_width, int t_height, int t_radius, RGB t_color);
-    /*
-    Рисует закрашенный круг
-    x, y - координаты
-    w, h - ширина и высота
-    r - радиус скругления
-    cr, cg, cb - цвет
-    */
-
-    void text(int t_x, int t_y, std::string t_string, RGB t_colors);
-
-
+    
+    /*!
+     *\brief Draw a text
+     *\author imabramon
+     *\version 0.1
+     *\param t_x X coordinate
+     *\param t_y Y coordinate
+     *\param t_string Text
+     *\param t_color Text color
+     */
+    void text(int t_x, int t_y, std::string t_string, RGB t_color);
 }
 
 #endif /* Draw_hpp */
