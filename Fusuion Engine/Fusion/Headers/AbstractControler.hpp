@@ -37,12 +37,12 @@ public:
     virtual void reshape(GLint t_width, GLint t_height)  = 0;
     /*!
      *\brief Glut mouse function interface
-     *\author imabramon
-     *\version 1.0
      *\param t_button Pressed button
      *\param t_state mouse state
      *\param t_x mouse cursor x coordinate
      *\param t_y mouse cursor y coordinate
+     *\author imabramon
+     *\version 0.1
      */
     virtual void mouse(int t_button, int t_state, int t_x, int t_y)  = 0;
     /*!
@@ -53,7 +53,7 @@ public:
      */
     virtual void timer(int t_t) = 0;
     /*!
-     *\brief glut keyboard function interface
+     *\brief Glut keyboard function interface
      *\author imabramon
      *\version 0.1
      */

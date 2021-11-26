@@ -7,26 +7,49 @@
 /*!
  *\brief A class that displays a cell and changes its color depending on the cell data
  *\author imabramon
- *\version 1.0
+ *\version 0.1
 */
-
 class Cell2048: public TextBox{
 public:
-    
-    Cell2048(int t_x, int t_y, int t_width, int t_height, int t_radius, GameObject * t_parent, int * t_score, vector<RGB> & t_colors);
-    
-    
-    /*! Калл
-    @brief Находит сумму двух чисел
-    \return Сумму двух чисел, переданных в качестве аргументов
+    /*!
+     *\brief Contructor.
+     *\param t_x X coordinate
+     *\param t_y Y coordinate
+     *\param t_width Cell width
+     *\param t_height Cell height
+     *\param t_radius Cell border radius
+     *\param t_parent Parent object
+     *\param t_score Score pointer
+     *\param t_colors Color sequence
+     *\author imabramon
+     *\version 0.1
     */
+    Cell2048(int t_x, int t_y, int t_width, int t_height, int t_radius, GameObject * t_parent, int * t_score, vector<RGB> & t_colors);
 
-    bool isVisible() const override; //отображаетмся ли объект?
+    /*!
+     *\brief Reimplementation of visible method
+     *\return True if score is greater than zero else false
+     *\author imabramon
+     *\version 0.1
+    */
+    bool isVisible() const override;
     
-    
-    int getScore() const override; //получение отображаемых данных
+    /*!
+     *\brief Getter for score
+     *\return Current score
+     *\author imabramon
+     *\version 0.1
+    */
+    int getScore() const override;
 protected:
-    RGB _getColor() const override; //получение цвета
+    
+    /*!
+     *\brief Getter for color
+     *\return Current color depending on score
+     *\author imabramon
+     *\version 0.1
+    */
+    RGB _getColor() const override;
 private:
     vector<RGB> & m_colors;
 };

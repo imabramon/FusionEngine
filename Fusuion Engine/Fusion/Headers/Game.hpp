@@ -40,7 +40,7 @@ public:
      *\param t_width New window width
      *\param t_height New window height
      */
-    static void reshape(GLint t_width, GLint t_height); //Функция перерисовки
+    static void reshape(GLint t_width, GLint t_height);
     
     /*!
      *\brief The function that glut calls to interact with a mouse
@@ -51,7 +51,7 @@ public:
      *\param t_x Mouse x coordinate
      *\param t_y Mouse y coordinate
      */
-    static void mouse(int t_button, int t_state, int t_x, int t_y); //Функция обработки мыши
+    static void mouse(int t_button, int t_state, int t_x, int t_y);
     
     /*!
      *\brief The timer function that glut calls
@@ -69,27 +69,27 @@ public:
      *\param t_x Mouse x coordinate
      *\param t_y Mouuse y coordinate
      */
-    static void keyboard(unsigned char t_key, int t_x, int t_y); //Функция обработки клавиатуры
+    static void keyboard(unsigned char t_key, int t_x, int t_y);
     
     /*!
      *\brief Set static variable
      *\author imabramon
      *\version 0.1
      */
-    static void init(Game * t_game); //Инициализация игры
+    static void init(Game * t_game);
     
     /*!
      *\brief Calls glut function
      *\author imabramon
      *\version 0.1
      */
-    void play(); //функция игры
+    void play();
 private:
-    static Game * m_game; //Указатель на игру, чтобы можно было получить данные
+    static Game * m_game;
     
-    AbstractControler * m_controler; //Контролер игры
-    string m_windowName; //Имя игры
-    GLint m_width, m_height; //Размеры окна
+    AbstractControler * m_controler;
+    string m_windowName;
+    GLint m_width, m_height; 
 };
 
 #endif /* Game_hpp */
