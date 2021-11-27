@@ -148,14 +148,26 @@ public:
          */
         void perform() override;
     private:
+        //! Fucntion pointer
         moveFunction m_function;
+        
+        //! Model function
         Model2048 * m_model;
     };
 private:
+    //! Current score
     int m_score;
+    
+    //! Best score
     int m_best;
+    
+    //! Empty count
     int m_emptyCount;
+    
+    //! Matrix size
     int m_size;
+    
+    //! Data
     intMatrix_t m_data;
     
     /*!

@@ -67,13 +67,31 @@ protected:
      */
     void _selfRender() const override;
 private:
+    //! Empty count
     int m_emptyCount;
-    int m_width, m_height;
+    
+    //! Field width
+    int m_width;
+    
+    //! Field height
+    int m_height;
+    
+    //! Space between cells
     int m_space;
+    
+    //! Cell size
     int m_cellSize;
+    
+    //! Cell round
     int m_cellRound;
+    
+    //! Matrix size
     int m_size;
+    
+    //! Matrix data reference
     vector<vector<int>> & m_data;
+    
+    //! Color seqence
     vector<RGB> m_colors;
 };
 

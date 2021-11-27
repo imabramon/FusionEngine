@@ -51,8 +51,13 @@ public:
      */
     AbstractEvent * notDoublePressed();
 private:
+    //! Key pressed events storage
     std::map<Key, AbstractEvent *> m_events;
+    
+    //! Last key pressed
     Key m_lastKey;
+    
+    //! Not double press event storage
     AbstractEvent * m_notDoublePressedEvent = nullptr;
 };
 

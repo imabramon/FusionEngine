@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F01C4E727522728004DA76C /* MAINPAGE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MAINPAGE.md; sourceTree = "<group>"; };
 		2F12CEC0261F0D8600A7B17A /* Fusion Engine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Fusion Engine"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F12CEC3261F0D8600A7B17A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		2F12CECF261F0E0A00A7B17A /* Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colors.h; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 				2FA21370262A2B6200BCEBCC /* colors.txt */,
 				2FB4722E2713160700BB58B4 /* README.md */,
 				2FB4722F27146C5C00BB58B4 /* SyntaxTarget.md */,
+				2F01C4E727522728004DA76C /* MAINPAGE.md */,
 			);
 			path = "Fusuion Engine";
 			sourceTree = "<group>";

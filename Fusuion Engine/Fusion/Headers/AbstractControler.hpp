@@ -9,9 +9,7 @@
 #include "AbstractAction.hpp"
 
 /*!
- *\brief Base Contoler class.
- *       Directly calls glut functions, giving the user an easier way to develop a game
- *       using a keyboard object, an event-action system
+ *\brief Base Contoler class. Directly calls glut functions, giving the user an easier way to develop a game using a keyboard object, an event-action system
  *\author imabramon
  *\version 0.1
  */
@@ -89,8 +87,12 @@ protected:
      *\version 0.1
      */
     virtual void __destructor() = 0;
+    
+    
+    //! Keyboard object
     Keyboard m_keyboard;
 private:
+    //! Action storage
     std::vector<AbstractAction *> m_actions;
 };
 

@@ -86,13 +86,31 @@ protected:
      */
     void __destructor() override;
 private:
+    //! Current scene pointer
     GameObject * m_scene;
+    
+    //! Game model
     Model2048 m_model;
+    
+    //! Space between cells
     int m_space;
-    int m_cellSize, m_cellRound;
+    
+    //! Cell size
+    int m_cellSize;
+    
+    //! Cell rounded
+    int m_cellRound;
+    
+    //! Game window width
     int m_width;
+    
+    //! Game window height
     int m_height;
+    
+    //! Gameover flag
     bool m_gameOver = false;
+    
+    //! Best score file path
     string m_bestPath;
     
 };

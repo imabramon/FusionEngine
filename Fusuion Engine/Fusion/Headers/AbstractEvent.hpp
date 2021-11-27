@@ -42,6 +42,7 @@ protected:
      */
     virtual void __destructor();
 private:
+    //! Actions subscribed to this event
     std::vector<AbstractAction *> m_actions;
 };
 

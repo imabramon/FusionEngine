@@ -98,15 +98,28 @@ protected:
      */
     void _delchilds();
     
+    //! Number of all gameobjects
     static int m_objectCount;
+    
+    //! Logging flag, if 1 GameObjects will be logg self creation and destruction, else no logging
     static int m_log;
     
+    //! Object ID
     int m_id;
-    int m_x, m_y;
+    
+    //! Object x coordinate
+    int m_x;
+    
+    //! Object y coordinate
+    int m_y;
+    
+    //! Object visible
     bool m_visible;
     
+    //! Object parent pointer
     GameObject * m_parent;
     
+    //! Object childs
     vector<GameObject *> m_child;
 };
 

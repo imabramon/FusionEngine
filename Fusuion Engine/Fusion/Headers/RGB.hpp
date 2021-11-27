@@ -54,7 +54,14 @@ public:
      */
     int getBlue() const;
 private:
-    int m_red, m_green, m_blue;
+    //! Red component
+    int m_red;
+    
+    //! Green compinent
+    int m_green;
+    
+    //! Blue component
+    int m_blue;
     
     /*!
      *\brief Covert hex char to number
