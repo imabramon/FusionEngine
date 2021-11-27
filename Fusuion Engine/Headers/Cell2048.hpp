@@ -51,6 +51,7 @@ protected:
     */
     RGB _getColor() const override;
 private:
+    //! Color sqeuence 
     vector<RGB> & m_colors;
 };
 

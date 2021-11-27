@@ -65,8 +65,16 @@ protected:
      */
     virtual RGB _getColor() const;
     
+    //! Score pointer
     int * m_score = NULL;
-    int m_width, m_height;
+    
+    //! Textbox width
+    int m_width;
+    
+    //! Textbox height
+    int m_height;
+    
+    //! Textbox corner radius
     int m_radius;
 };
 

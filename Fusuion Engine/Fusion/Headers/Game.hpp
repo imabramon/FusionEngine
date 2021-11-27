@@ -85,11 +85,16 @@ public:
      */
     void play();
 private:
+    //! Current game pointer
     static Game * m_game;
-    
+    //! Current game controller
     AbstractControler * m_controler;
+    //! Window name
     string m_windowName;
-    GLint m_width, m_height; 
+    //! Window width
+    GLint m_width;
+    //! Window height
+    GLint m_height;
 };
 
 #endif /* Game_hpp */
