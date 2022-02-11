@@ -13,8 +13,10 @@
 #include "Fusion/Headers/Draw.hpp"
 #include "Fusion/Headers/Colors.h"
 #include "Fusion/Headers/Game.hpp"
+#include "Fusion/Headers/GameObject.hpp"
 #include "Fusion/Headers/AbstractControler.hpp"
-#include "Headers/Controler2048.hpp"
+
+#include "Headers/ClickerController.hpp"
 
 /* TODO MACROS
  Code below to macros
@@ -43,9 +45,13 @@ using namespace std;
 int main(int argc, char *argv[]){
     srand((int)time(NULL));
     glutInit(&argc,argv);
-    Controler2048 controler("settings.txt"); 
-    Game game2048(&controler);
-    Game::init(&game2048);
-    game2048.play();
+    //Controler2048 controler("settings.txt");
+    //Game game2048(&controler);
+    //Game::init(&game2048);
+    //game2048.play();
+    ClickerController controler;
+    Game clickerGame(&controler);
+    Game::init(&clickerGame);
+    clickerGame.play();
     return 0;
 }
