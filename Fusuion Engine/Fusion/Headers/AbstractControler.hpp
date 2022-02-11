@@ -11,7 +11,7 @@
 /*!
  *\brief Base Contoler class. Directly calls glut functions, giving the user an easier way to develop a game using a keyboard object, an event-action system
  *\author imabramon
- *\version 0.1
+ *\version 0.2.1
  */
 
 class AbstractControler{
@@ -79,7 +79,15 @@ public:
      *\author imabramon
      *\version 0.1
      */
+    
     void connect(AbstractEvent * t_event, AbstractAction * t_action);
+    
+    /*!
+     *\brief Returns a window title
+     *\author imabramon
+     *\version 0.1
+     */
+    virtual std::string getCurrentWindowTitle() = 0;
 protected:
     /*!
      *\brief Destructor interface

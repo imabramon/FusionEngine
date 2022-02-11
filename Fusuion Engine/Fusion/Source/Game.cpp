@@ -38,10 +38,15 @@ void Game::init(Game * t_game){
     Game::m_game = t_game;
 }
 
+string Game::currentWindowTitle(){
+    return m_controler->getCurrentWindowTitle();
+}
+
 void Game::play(){
     //glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(m_width, m_height);
-    glutCreateWindow("2048 Game");
+    auto windowTitle = m_game->currentWindowTitle();
+    glutCreateWindow(windowTitle.c_str());
     glutDisplayFunc(Game::display);
     glutReshapeFunc(Game::reshape);
     glutKeyboardFunc(Game::keyboard);

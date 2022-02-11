@@ -11,7 +11,7 @@ using namespace std;
 /*!
  *\brief A wrapper over glut functions that allows to implement a controller class
  *\author imabramon
- *\version 0.1
+ *\version 0.2.1
  *\todo Узнать что значат параметры glut функций
  */
 
@@ -81,9 +81,11 @@ public:
     /*!
      *\brief Calls glut function
      *\author imabramon
-     *\version 0.1
+     *\version 0.2.1
      */
     void play();
+    
+    string currentWindowTitle();
 private:
     //! Current game pointer
     static Game * m_game;
