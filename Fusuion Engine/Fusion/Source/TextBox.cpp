@@ -8,7 +8,29 @@
 
 using namespace std;
 
-TextBox::TextBox(int t_x, int t_y, int t_width, int t_height, int t_radius, GameObject * t_parent, int * t_score):GameObject(t_x, t_y, t_parent), m_score(t_score), m_width(t_width), m_height(t_height), m_radius(t_radius) {};
+TextBox::TextBox():GameObject(), m_score(NULL), m_width(0), m_height(0), m_radius(0) {};
+
+void TextBox::setPosition(int t_x, int t_y){
+    m_x = t_x;
+    m_y = t_y;
+}
+
+void TextBox::setSize(int t_width, int t_height){
+    m_width = t_width;
+    m_height = t_height;
+}
+
+void TextBox::setRadius(int t_radius){
+    m_radius = t_radius;
+}
+
+void TextBox::setText(int * t_score){
+    m_score = t_score;
+}
+
+void TextBox::setParent(GameObject * t_parent){
+    m_parent = t_parent;
+}
 
 bool TextBox::isVisible() const{
     return 1;

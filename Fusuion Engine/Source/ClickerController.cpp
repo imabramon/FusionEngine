@@ -1,18 +1,33 @@
 #define GL_SILENCE_DEPRECATION
 
 #include "ClickerController.hpp"
+#include "../Fusion/Headers/GameObject.hpp"
+#include "../Fusion/Headers/TextBox.hpp"
 
 ClickerController::ClickerController(){
-    
+    m_scene = new GameObject(0, 0, NULL);
+    auto textBox = new TextBox();
+    textBox->setPosition(75, 75);
+    textBox->setSize(150, 150);
+    textBox->setRadius(15);
+    textBox->setText(&temp_score);
+    *m_scene += textBox;
 }
 
 ClickerController::~ClickerController(){
-    
+    if(m_scene != NULL) {
+        delete m_scene;
+    }
 }
 
 void ClickerController::display(){
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    if(m_scene != NULL) {
+        m_scene->render();
+    }
+    
     glFlush();
 }
 

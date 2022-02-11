@@ -7,24 +7,52 @@
 /*!
  *\brief Class which displays some text inside round rectangle
  *\author imabramon
- *\version 0.1
+ *\version 0.2.1
  */
 
 class TextBox: public GameObject{
 public:
     /*!
      *\brief Class which displays some text inside round rectangle
-     *\param t_x X coordinate
-     *\param t_y Y coordinate
-     *\param t_width Width
-     *\param t_height Height
-     *\param t_radius Radius
-     *\param t_parent Object parent
-     *\param t_score Object score
+     *\author imabramon
+     *\version 0.2.1
+     */
+    TextBox();
+    
+    /*!
+     *\brief Setter for TextBox position
      *\author imabramon
      *\version 0.1
      */
-    TextBox(int t_x, int t_y, int t_width, int t_height, int t_radius, GameObject * t_parent, int * t_score);
+    void setPosition(int t_x, int t_y);
+    
+    /*!
+     *\brief Setter for TextBox size
+     *\author imabramon
+     *\version 0.1
+     */
+    void setSize(int t_width, int t_height);
+    
+    /*!
+     *\brief Setter for TextBox radius
+     *\author imabramon
+     *\version 0.1
+     */
+    void setRadius(int t_radius);
+    
+    /*!
+     *\brief Setter for TextBox text
+     *\author imabramon
+     *\version 0.1
+     */
+    void setText(int * t_score);
+    
+    /*!
+     *\brief Setter for TextBox parent
+     *\author imabramon
+     *\version 0.1
+     */
+    void setParent(GameObject * t_parent);
     
     /*!
      *\brief Getting data for displaying

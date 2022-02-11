@@ -8,7 +8,7 @@ using namespace std;
 /*!
  *\brief Base class for all game object. Allows you to store all objects in a tree structure. Can display objects
  *\author imabramon
- *\version 0.1
+ *\version 0.2.1
 */
 
 class GameObject{
@@ -19,9 +19,9 @@ public:
      *\param t_y Y coordinate
      *\param t_parent Parent GameObject pointer
      *\author imabramon
-     *\version 0.1
+     *\version 0.2.1
      */
-    GameObject(int t_x, int t_y, GameObject * t_parent);
+    GameObject(int t_x = 0, int t_y = 0, GameObject * t_parent = NULL);
     
     /*!
      *\brief Destructor. Delete child objects

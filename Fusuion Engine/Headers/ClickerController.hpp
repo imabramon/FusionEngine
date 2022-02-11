@@ -13,6 +13,9 @@
 #include <string>
 
 #include "../Fusion/Headers/AbstractControler.hpp"
+#include "../Fusion/Headers/GameObject.hpp"
+
+#include "../Headers/ClickerModel.hpp"
 
 class ClickerController: public AbstractControler{
 public:
@@ -29,6 +32,9 @@ public:
 protected:
     void __destructor() override;
 private:
+    GameObject * m_scene;
+    ClickerModel m_model;
+    int temp_score = 100;
 };
 
 #endif /* ClickerController_hpp */

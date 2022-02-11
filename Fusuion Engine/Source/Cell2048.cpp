@@ -3,9 +3,13 @@
 Cell2048::Cell2048(int t_x, int t_y, int t_width, int t_height,
                    int t_radius, GameObject * t_parent,
                    int * t_score, vector<RGB> & t_colors):
-TextBox(t_x, t_y, t_width, t_height, t_radius, t_parent, t_score),
+TextBox(),
 m_colors(t_colors){
-    
+    this->setPosition(t_x, t_y);
+    this->setSize(t_width, t_height);
+    this->setRadius(t_radius);
+    this->setParent(t_parent);
+    this->setText(t_score);
 };
 
 bool Cell2048::isVisible() const{
