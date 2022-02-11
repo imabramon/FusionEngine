@@ -22,6 +22,8 @@
 		2FB4723F27235C1D00BB58B4 /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4723D27235C1700BB58B4 /* Keyboard.cpp */; };
 		2FB4724327235DB200BB58B4 /* AbstractEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4724127235DAF00BB58B4 /* AbstractEvent.cpp */; };
 		2FB472452724181A00BB58B4 /* AbstractControler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB472442724181A00BB58B4 /* AbstractControler.cpp */; };
+		2FF7E77127B5672800DFB7B8 /* ClickerModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FF7E76F27B5672500DFB7B8 /* ClickerModel.cpp */; };
+		2FF7E77427B6458200DFB7B8 /* ClickerController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FF7E77227B5676400DFB7B8 /* ClickerController.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -279,6 +281,10 @@
 		2FB472442724181A00BB58B4 /* AbstractControler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractControler.cpp; sourceTree = "<group>"; };
 		2FB4724727242EC200BB58B4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2FE20085274A87B700CDD15B /* doxygen_config */ = {isa = PBXFileReference; lastKnownFileType = text; path = doxygen_config; sourceTree = "<group>"; };
+		2FF7E76F27B5672500DFB7B8 /* ClickerModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClickerModel.cpp; sourceTree = "<group>"; };
+		2FF7E77027B5672500DFB7B8 /* ClickerModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClickerModel.hpp; sourceTree = "<group>"; };
+		2FF7E77227B5676400DFB7B8 /* ClickerController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClickerController.cpp; sourceTree = "<group>"; };
+		2FF7E77327B5676400DFB7B8 /* ClickerController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ClickerController.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +568,8 @@
 				2F12CEE726203FC400A7B17A /* Controler2048.hpp */,
 				2F12CEF02621CFBF00A7B17A /* Field.hpp */,
 				2FB47231271C5A4500BB58B4 /* Model2048.hpp */,
+				2FF7E77027B5672500DFB7B8 /* ClickerModel.hpp */,
+				2FF7E77327B5676400DFB7B8 /* ClickerController.hpp */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -569,6 +577,8 @@
 		2F12CED1261F0E0A00A7B17A /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2FF7E77227B5676400DFB7B8 /* ClickerController.cpp */,
+				2FF7E76F27B5672500DFB7B8 /* ClickerModel.cpp */,
 				2F12CEF2262462B400A7B17A /* Cell2048.cpp */,
 				2F12CEE626203FC400A7B17A /* Controler2048.cpp */,
 				2F12CEEF2621CFBF00A7B17A /* Field.cpp */,
@@ -689,9 +699,11 @@
 			files = (
 				2F12CEEB26204B5700A7B17A /* GameObject.cpp in Sources */,
 				2FB47232271C5A4500BB58B4 /* Model2048.cpp in Sources */,
+				2FF7E77427B6458200DFB7B8 /* ClickerController.cpp in Sources */,
 				2F12CEE826203FC400A7B17A /* Controler2048.cpp in Sources */,
 				2FB4723F27235C1D00BB58B4 /* Keyboard.cpp in Sources */,
 				2F12CEC4261F0D8600A7B17A /* main.cpp in Sources */,
+				2FF7E77127B5672800DFB7B8 /* ClickerModel.cpp in Sources */,
 				2F12CED8261F0E0A00A7B17A /* Draw.cpp in Sources */,
 				2FB472452724181A00BB58B4 /* AbstractControler.cpp in Sources */,
 				2F12CEEE2620EA9F00A7B17A /* TextBox.cpp in Sources */,
