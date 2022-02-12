@@ -18,6 +18,7 @@
 		2F12CEF12621CFBF00A7B17A /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEEF2621CFBF00A7B17A /* Field.cpp */; };
 		2F12CEF4262462B400A7B17A /* Cell2048.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEF2262462B400A7B17A /* Cell2048.cpp */; };
 		2F12CEF82626E05700A7B17A /* RGB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F12CEF62626E05700A7B17A /* RGB.cpp */; };
+		2F214E3E27B67D3E00593211 /* FInt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F214E3C27B67D2F00593211 /* FInt.cpp */; };
 		2FB47232271C5A4500BB58B4 /* Model2048.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47230271C5A4500BB58B4 /* Model2048.cpp */; };
 		2FB4723F27235C1D00BB58B4 /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4723D27235C1700BB58B4 /* Keyboard.cpp */; };
 		2FB4724327235DB200BB58B4 /* AbstractEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4724127235DAF00BB58B4 /* AbstractEvent.cpp */; };
@@ -265,6 +266,8 @@
 		2F12CEF526246E5B00A7B17A /* best.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = best.txt; sourceTree = "<group>"; };
 		2F12CEF62626E05700A7B17A /* RGB.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RGB.cpp; sourceTree = "<group>"; };
 		2F12CEF72626E05700A7B17A /* RGB.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RGB.hpp; sourceTree = "<group>"; };
+		2F214E3C27B67D2F00593211 /* FInt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FInt.cpp; sourceTree = "<group>"; };
+		2F214E3D27B67D2F00593211 /* FInt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FInt.hpp; sourceTree = "<group>"; };
 		2FA21370262A2B6200BCEBCC /* colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = colors.txt; sourceTree = "<group>"; };
 		2FA21371262A2F0300BCEBCC /* Glut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glut.h; sourceTree = "<group>"; };
 		2FB4722E2713160700BB58B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -608,6 +611,7 @@
 		2FB4722C2713128100BB58B4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2F214E3C27B67D2F00593211 /* FInt.cpp */,
 				2FB472442724181A00BB58B4 /* AbstractControler.cpp */,
 				2FB4724127235DAF00BB58B4 /* AbstractEvent.cpp */,
 				2F12CED4261F0E0A00A7B17A /* Draw.cpp */,
@@ -636,6 +640,7 @@
 				2F12CEF72626E05700A7B17A /* RGB.hpp */,
 				2F12CEED2620EA9F00A7B17A /* TextBox.hpp */,
 				2FB472392720441C00BB58B4 /* TypeAlias.h */,
+				2F214E3D27B67D2F00593211 /* FInt.hpp */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 				2F12CED8261F0E0A00A7B17A /* Draw.cpp in Sources */,
 				2FB472452724181A00BB58B4 /* AbstractControler.cpp in Sources */,
 				2F12CEEE2620EA9F00A7B17A /* TextBox.cpp in Sources */,
+				2F214E3E27B67D3E00593211 /* FInt.cpp in Sources */,
 				2F12CEF4262462B400A7B17A /* Cell2048.cpp in Sources */,
 				2FB4724327235DB200BB58B4 /* AbstractEvent.cpp in Sources */,
 				2F12CEF12621CFBF00A7B17A /* Field.cpp in Sources */,
